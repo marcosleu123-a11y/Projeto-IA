@@ -1,0 +1,2 @@
+Cada um deverá criar uma branch específica para a tua parte do trabalho. Exemplo: branch "Caio" para a parte do Caio
+Deixar a branch master apenas para a versao final do projeto, revisada e funcional
