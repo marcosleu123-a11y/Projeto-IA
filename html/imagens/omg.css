@@ -1,0 +1,8 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.texto-destaque{
+    color: red;
+    background-color: aquamarine;
+}
