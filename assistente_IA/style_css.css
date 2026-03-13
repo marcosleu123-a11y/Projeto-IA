@@ -20,10 +20,9 @@ body {
     position: relative;
     z-index: 5;
     box-shadow: 
-        0 0 1px #ff7b00,
-        0 0 5px rgba(255, 122, 0, 0.8),
-        0 0 12px rgba(255, 122, 0, 0.5),
-        0 0 17px #683607;
+       
+        0 0 6px rgba(255, 122, 0, 0.5),
+        0 0 13px #683607;
 }
 
 .card_do_card {
@@ -64,10 +63,9 @@ body {
     height: 100%;
     background: rgba(255, 122, 0, 0.7);
     box-shadow: 
-        0 0 1px #ff7b00,
-        0 0 5px rgba(255, 122, 0, 0.8),
-        0 0 12px rgba(255, 122, 0, 0.5),
-        0 0 17px #683607;
+        0 0 16px rgba(255, 122, 0, 0.7),
+        0 0 25px rgba(255, 122, 0, 0.5),
+        0 0 30px #683607;
         
     transition: 5s;
 }
@@ -97,10 +95,8 @@ body {
     border: 1.5px solid #6c3d8f;
     flex-direction: column;
     box-shadow: 
-        0 0 1px #ff7b00,
-        0 0 5px rgba(255, 122, 0, 0.8),
-        0 0 12px rgba(255, 122, 0, 0.5),
-        0 0 17px #683607;
+      0 0 6px rgba(255, 122, 0, 0.5),
+        0 0 13px #683607;
     transition: 5s;
 
     position: relative;
@@ -111,7 +107,6 @@ body {
     position: absolute;
     inset: 0;
 
-    background-image: url("./logo_transparente\ \(1\).svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 220px;
@@ -136,10 +131,8 @@ body {
     background: linear-gradient(to bottom, #163a96 0%, #0b2157 40%, #020816 100%);
 
     box-shadow: 
-        0 0 1px #ff7b00,
-        0 0 4px rgba(255, 122, 0, 0.8),
-        0 0 10px rgba(255, 122, 0, 0.5),
-        0 0 14px #683607;
+   0 0 6px rgba(255, 122, 0, 0.5),
+        0 0 13px #683607;
 }
 
 .campo_input {
@@ -168,8 +161,9 @@ body {
 }
 
 .enviar {
-    height: 34px;
-    min-width: 110px;
+    height: 24px;
+    min-width: 30px;
+    max-width: 100px;
     padding: 0 14px;
     background-color: #FF6A00;
     display: flex;
@@ -178,9 +172,9 @@ body {
     color: white;
     border-radius: 20px;
     box-shadow: 
-        0 0 5px #ff7a00,
-        0 0 11px rgba(255, 122, 0, 0.8),
-        0 0 17px rgba(255, 122, 0, 0.5);
+    
+        0 0 6px rgba(255, 122, 0, 0.8),
+        0 0 11px rgba(255, 122, 0, 0.5);
     transition: 5s;
     text-shadow: 0 0 2px white;
     flex-shrink: 0;
@@ -188,13 +182,25 @@ body {
 
 .enviar_texto {
     font-family: "Krona One", sans-serif;
-    font-size: 13px;
+    font-size: 12px;
     padding-right: 10px;
-    font-weight: 400;
+    font-weight: 100px;
 }
 
 .aviao {
-    height: 36px;
-    width: 36px;
+    height: 34px;
+    width: 34px;
     padding-bottom: 7px;
+}
+.animacao-fundo {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 420px;
+    height: 420px;
+    border: none;
+    pointer-events: none;
+    z-index: 1;
+    background: transparent;
 }
