@@ -1,0 +1,134 @@
+
+body {
+    background: linear-gradient(135deg, #04091A 0%, #0B163B 100%);
+    color: #e0e6ed;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 40px;
+    min-height: 100vh; /* Garante que o degradê desça até o final da página */
+}
+
+#caixa-principal {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+#colunas {
+    display: flex;
+    gap: 25px;
+}
+
+/* Cartões com aspecto translúcido e borda roxa sutil (Inspirado no chat) */
+.cartao {
+    background: rgba(6, 11, 29, 0.7); /* Fundo escuro com um pouco de transparência */
+    border: 1px solid #472B5E;        /* Borda roxa escura que aparece na sua imagem */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); /* Sombra para dar profundidade */
+}
+
+.principal { width: 60%; display: flex; flex-direction: column; }
+.historico { width: 40%; }
+.centralizar-conteudo { align-items: center; text-align: center; }
+
+/* Botões de tempo (25/5 e 50/10) - Vazados, parecidos com os do topo do chat */
+.grupo-tempo {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.botao-cinza {
+    background-color: transparent;
+    color: #94a3b8;
+    border: 1px solid #472B5E;
+    padding: 8px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s; /* Deixa a mudança de cor mais suave */
+}
+
+/* O botão selecionado ganha destaque no laranja */
+.botao-cinza.ativo {
+    background-color: rgba(255, 138, 0, 0.1); /* Fundo laranjinha bem fraco */
+    color: #FF8A00;                           /* Texto Laranja */
+    border-color: #FF8A00;
+}
+
+/* Campo de Tarefa - Inspirado na barra "Como posso ajudar você hoje?" */
+#campo-tarefa {
+    width: 100%;
+    padding: 15px;
+    /* Degradê sutil no próprio input */
+    background: linear-gradient(to right, #0A1435, #04091A);
+    color: #ffffff;
+    border: 1px solid #472B5E;
+    border-radius: 8px;
+    font-size: 16px;
+    margin-top: 8px;
+    margin-bottom: 30px;
+    box-sizing: border-box;
+    outline: none; /* Tira aquela borda branca padrão do navegador */
+}
+
+/* Quando o usuário clica no campo, a borda fica laranja */
+#campo-tarefa:focus {
+    border-color: #FF8A00; 
+}
+
+/* O Cronômetro */
+#area-relogio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+#relogio {
+    font-size: 90px;
+    margin: 0;
+    line-height: 1;
+    font-weight: bold;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.15); /* Leve brilho nos números */
+}
+
+#area-relogio p { color: #94a3b8; margin-top: 8px; }
+
+/* Botões de Ação Principais */
+.grupo-botoes {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.botao {
+    font-size: 16px;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+    transition: 0.3s;
+}
+
+/* 1. Botão Iniciar: Laranja Vibrante (Igual ao botão Enviar) */
+.iniciar {
+    background: linear-gradient(90deg, #FF8A00, #E65C00);
+    color: white;
+    box-shadow: 0 4px 15px rgba(255, 138, 0, 0.3); /* Brilho laranja ao redor */
+}
+
+/* 2. Botão Pausar: Azul Escuro Vazado com borda roxa */
+.pausar {
+    background-color: transparent;
+    color: white;
+    border: 2px solid #472B5E;
+}
+
+/* 3. Botão Finalizar: A "terceira cor" combinando - Um Roxo Escuro elegante */
+.finalizar {
+    background-color: #2D1B4D; 
+    color: #D4A5FF; /* Letra num tom lilás */
+    border: 1px solid #472B5E;
+}
