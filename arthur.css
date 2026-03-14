@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sora:wght@100..800&display=swap');
+
+body{
+    margin:0px;
+    height:520px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#060B1D;
+    font-family:Arial, Helvetica, sans-serif;
+    position: static;
+}
+
+
+.login-container{
+    width:500px;
+    align-self:center;
+    padding: 25px;
+    padding-top: 0px;
+    margin-top: 45%;
+    transform: translateY(-50%);
+    background: linear-gradient(to bottom, #0c2568 0%, #081a47 35%, #0d0216 100%);
+    border-radius:14px;
+    color:white;
+    position: relative;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    border: 1.5px solid #6c3d8f;
+    box-shadow: 
+        0 0 6px rgba(255, 122, 0, 0.5),
+        0 0 13px #683607;
+    
+
+}
+
+
+.login-container h2{
+    margin-bottom:0px;
+    position: static;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.logo{
+    display:flex;
+    justify-content:center;
+    padding-left: 100%;
+    transform: translateX(-50%);
+    position: relative;
+    width: 100px;
+    height: 100px;
+   
+}
+
+
+.subtitle{
+    font-size:20px;
+    color: white;
+    position: relative;
+    margin-top: 0px;
+}
+
+
+form{
+    display:flex;
+    flex-direction:column;
+    position: relative;
+}
+
+input{
+    margin-bottom:14px;
+    padding:10px;
+    border-radius:8px;
+    border:none;
+    background:#120349;
+    color:white;
+    position: relative;
+}
+
+
+.options{
+    display:flex;
+    justify-content:space-between;
+    position: relative;
+}
+
+
+.options .checkbox{
+    margin-bottom:14px;
+    color:white;
+    position: relative;
+    font-size:14px;
+}
+
+
+.forgot{
+    color: #e55b43;
+    text-decoration:none;
+    position: relative;
+    text-decoration: none;
+    font-size:14px;
+}
+.forgot:hover{
+    color:#fbac5d;
+    text-decoration:underline;
+    position: relative;
+}
+button{
+    padding:12px;
+    padding-left:230px;
+    padding-right:230px;
+    border:none;
+    border-radius:8px;
+    background:#e4681a;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+    border: 0.5px solid transparent;
+    position: relative;
+    font-size: 16px;
+    box-shadow: 
+        0 0 6px rgba(255, 122, 0, 0.5),
+        0 0 13px #683607;
+  font-family: "Sora", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+button:hover{
+    background:#d27841;
+    border:0.5px solid white;
+    transition: 0.1s ease-in-out;
+    position: relative;
+    
+}
+
+
+.register{
+    margin-top:15px;
+    font-size:14px;
+    position: relative;
+}
+
+.register a{
+    color:#e55b43;
+    text-decoration:none;
+    position: relative;
+}
+
+.register a:hover{
+    color:#fbac5d;
+    text-decoration:underline;
+    position: relative;
+}
+.animacao_ {
+    border: none;
+}
+
+.matricula {
+    padding-bottom: 10px;
+}
+.senha {
+    padding-bottom: 10px;
+}
