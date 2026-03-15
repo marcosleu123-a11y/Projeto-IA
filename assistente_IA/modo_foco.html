@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modo Foco - Vortex</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="modo_foco.css">
+</head>
+<body>
+    <div class="card_cima">
+        <div class="card_do_card"></div>
+    </div>
+
+    <div class="conteudo">
+        <div class="card_lado">
+            <nav class="menu-lateral">
+                <ul>
+                    <li class="item-menu">
+                        <a href="Assistente.html">
+                            <span class="icon"><i class="bi bi-robot"></i></span>
+                            <span class="txt-link">Assistente IA</span>
+                        </a>
+                    </li>
+
+                    <li class="item-menu">
+                        <a href="modo_foco.html">
+                            <span class="icon"><i class="bi bi-bullseye"></i></span>
+                            <span class="txt-link">Modo Foco</span>
+                        </a>
+                    </li>
+
+                    <li class="item-menu">
+                        <a href="#">
+                            <span class="icon"><i class="bi bi-book-half"></i></span>
+                            <span class="txt-link">Tarefas</span>
+                        </a>
+                    </li>
+
+                    <li class="item-menu">
+                        <a href="#">
+                            <span class="icon"><i class="bi bi-person-circle"></i></span>
+                            <span class="txt-link">Prefil</span>
+                        </a>
+                    </li>
+
+                    <li class="item-menu">
+                        <a href="#">
+                            <span class="icon"><i class="bi bi-gear-fill"></i></span>
+                            <span class="txt-link">Ajustes</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="area_principal">
+            <div id="caixa-principal">
+                <div id="colunas">
+                    <div class="cartao principal centralizar-conteudo">
+                        <h2>Modo Foco</h2>
+                        <p>Concentração ativa para manter constância de estudo.</p>
+
+                        <div class="grupo-tempo">
+                            <button class="botao-cinza ativo">25/5</button>
+                            <button class="botao-cinza">50/10</button>
+                        </div>
+
+                        <label for="campo-tarefa">No que vou focar agora?</label>
+                        <input type="text" id="campo-tarefa" value="Revisar capítulo 3">
+
+                        <div id="area-relogio">
+                            <h1 id="relogio">25:00</h1>
+                            <p>Hoje: 0 min focados</p>
+                        </div>
+
+                        <div class="grupo-botoes">
+                            <button class="botao iniciar" onclick="iniciar()">Iniciar</button>
+                            <button class="botao pausar" onclick="pausar()">Pausar</button>
+                            <button class="botao finalizar" onclick="finalizar()">Finalizar</button>
+                        </div>
+                    </div>
+
+                    <div class="cartao historico">
+                        <h2>Histórico</h2>
+                        <p>Hoje + últimos 7 dias</p>
+                        <br><br>
+                        <p>Nenhuma sessão ainda. Bora a primeira?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var tempoTotal = 25 * 60;
+        var relogioRodando = false;
+        var motorDoRelogio;
+
+        function atualizarTela() {
+            var minutos = parseInt(tempoTotal / 60);
+            var segundos = tempoTotal % 60;
+
+            if (minutos < 10) minutos = "0" + minutos;
+            if (segundos < 10) segundos = "0" + segundos;
+
+            document.getElementById("relogio").innerText = minutos + ":" + segundos;
+        }
+
+        function salvarHistorico() {
+            alert("Sessão de foco concluída! Parabéns.");
+        }
+
+        function iniciar() {
+            if (relogioRodando == false) {
+                relogioRodando = true;
+                motorDoRelogio = setInterval(function() {
+                    if (tempoTotal > 0) {
+                        tempoTotal = tempoTotal - 1;
+                        atualizarTela();
+                    } else {
+                        pausar();
+                        salvarHistorico();
+                        tempoTotal = 25 * 60;
+                        atualizarTela();
+                    }
+                }, 1000);
+            }
+        }
+
+        function pausar() {
+            relogioRodando = false;
+            clearInterval(motorDoRelogio);
+        }
+
+        function finalizar() {
+            pausar();
+            tempoTotal = 25 * 60;
+            atualizarTela();
+        }
+    </script>
+</body>
+</html>

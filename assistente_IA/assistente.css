@@ -42,7 +42,7 @@ body {
     height: 100%;
     position: relative;
     z-index: 5;
-    border-right: 1px solid #6c3d8f;
+    border-right: 1px solid #412457;
     overflow: hidden;
     transition: width 0.4s ease, min-width 0.4s ease;
     

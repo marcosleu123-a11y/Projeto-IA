@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #060B1D;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+}
+
+/* TOPO */
+.card_cima {
+    background-color: #0E1942;
+    height: 100px;
+    width: 100%;
+    position: relative;
+    z-index: 5;
+    box-shadow:
+        0 0 6px rgba(255, 122, 0, 0.5),
+        0 0 13px #683607;
+}
+
+.card_do_card {
+    background-color: #0E1942;
+    height: 101px;
+    width: 68px;
+}
+
+/* LAYOUT GERAL */
+.conteudo {
+    display: flex;
+    height: calc(100vh - 100px);
+}
+
+.card_lado {
+    background-color: #0E1942;
+    width: 67.4px;
+    min-width: 67.4px;
+    height: 100%;
+    position: relative;
+    z-index: 5;
+    border-right: 1px solid #412457;
+    overflow: hidden;
+    transition: width 0.4s ease, min-width 0.4s ease;
+}
+
+.card_lado:hover {
+    width: 220px;
+    min-width: 220px;
+}
+
+.card_lado::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -2px;
+    width: 1px;
+    height: 100%;
+    background: rgba(255, 122, 0, 0.7);
+    box-shadow:
+        0 0 16px rgba(255, 122, 0, 0.7),
+        0 0 25px rgba(255, 122, 0, 0.5),
+        0 0 30px #683607;
+}
+
+/* MENU */
+.menu-lateral {
+    width: 220px;
+    height: 100%;
+    padding: 20px 10px;
+}
+
+.menu-lateral ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.item-menu a {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: #D1D1D1;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 14px 16px;
+    border-radius: 12px;
+    font-family: "Montserrat", sans-serif;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item-menu a:hover {
+    background: #BF6301;
+    color: white;
+    transform: translateX(6px);
+    box-shadow: 0 0 10px rgba(255, 106, 0, 0.35);
+}
+
+.icon {
+    width: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon i {
+    font-size: 22px;
+}
+
+.txt-link {
+    white-space: nowrap;
+}
+
+/* ÁREA PRINCIPAL */
+.area_principal {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    
+}
+
+/* MODO FOCO */
+#caixa-principal {
+    width: 100%;
+    max-width: 900px;
+   
+    
+}
+
+#colunas {
+    display: flex;
+    gap: 25px;
+}
+
+.cartao {
+    background: rgba(6, 11, 29, 0.7);
+    border: 1px solid #472B5E;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(to bottom, #0c1e52 0%, #081a47 35%, #060018 100%);
+    box-shadow: 
+        0 0 3px rgba(255, 122, 0, 0.5),
+        0 0 8px #683607;
+    transition: 5s;
+}
+
+.principal {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+
+.historico {
+    width: 40%;
+}
+
+.centralizar-conteudo {
+    align-items: center;
+    text-align: center;
+}
+
+.grupo-tempo {
+    display: flex;
+    gap: 12px;
+    margin: 20px 0 25px;
+}
+
+.botao-cinza {
+    background-color: transparent;
+    color: #94a3b8;
+    border: 1px solid #472B5E;
+    padding: 8px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.botao-cinza.ativo {
+    background-color: rgba(255, 138, 0, 0.1);
+    color: #FF8A00;
+    border-color: #FF8A00;
+}
+
+#campo-tarefa {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(to right, #0A1435, #04091A);
+    color: #ffffff;
+    border: 1px solid #472B5E;
+    border-radius: 8px;
+    font-size: 16px;
+    margin-top: 8px;
+    margin-bottom: 30px;
+    outline: none;
+}
+
+#campo-tarefa:focus {
+    border-color: #FF8A00;
+}
+
+#area-relogio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+#relogio {
+    font-size: 90px;
+    margin: 0;
+    line-height: 1;
+    font-weight: bold;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+}
+
+#area-relogio p {
+    color: #94a3b8;
+    margin-top: 8px;
+}
+
+.grupo-botoes {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.botao {
+    font-size: 16px;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+    transition: 0.3s;
+}
+
+.iniciar {
+    background: linear-gradient(90deg, #FF8A00, #E65C00);
+    color: white;
+    box-shadow: 0 4px 15px rgba(255, 138, 0, 0.3);
+}
+
+.pausar {
+    background-color: transparent;
+    color: white;
+    border: 2px solid #472B5E;
+}
+
+.finalizar {
+    background-color: #2D1B4D;
+    color: #D4A5FF;
+    border: 1px solid #472B5E;
+}
