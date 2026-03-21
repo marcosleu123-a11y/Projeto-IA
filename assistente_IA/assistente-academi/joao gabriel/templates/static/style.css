@@ -1,0 +1,203 @@
+body {
+    margin: 0;
+    font-family: 'Krona One', sans-serif;
+    background: #060B1D;
+    color: white;
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+.card_cima {
+    background-color: #0E1942;
+    height: 100px;
+    width: 100%;
+    
+    position: relative;
+    z-index: 5;
+    box-shadow: 
+        0 0 6px rgba(255, 122, 0, 0.5),
+        0 0 13px #683607;
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    padding-top: 23px;
+}
+.imagem_vortexx {
+    height: 100px;
+    width: 100px;
+}
+.nome_logo {
+    color: #D1D1D1;
+    font-family: "Montserrat", sans-serif;
+    padding-bottom: 20px;
+}
+
+.card_do_card {
+    background-color: #0E1942;
+    height: 101px;
+    width: 68px;
+}
+
+
+.layout {
+    display: flex;
+    height: calc(100vh - 100px);
+}
+
+
+.card_lado {
+    background-color: #0E1942;
+    width: 66px;
+    min-width: 66px;
+    height: 100%;
+    position: relative;
+    z-index: 5;
+    border-right: 1px solid #6c3d8f;
+    overflow: hidden;
+    transition: width 0.4s ease, min-width 0.4s ease;
+}
+
+.card_lado:hover {
+    width: 220px;
+    min-width: 220px;
+}
+
+.card_lado::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -2px;
+    width: 1px;
+    height: 100%;
+    background: rgba(255, 122, 0, 0.7);
+    box-shadow:
+        0 0 16px rgba(255, 122, 0, 0.7),
+        0 0 25px rgba(255, 122, 0, 0.5),
+        0 0 30px #683607;
+}
+
+.menu-lateral {
+    width: 220px;
+    height: 100%;
+    padding: 20px 10px;
+}
+
+.menu-lateral ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+}
+
+.item-menu a {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: #D1D1D1;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 14px 16px;
+    border-radius: 12px;
+    font-family: "Montserrat", sans-serif;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item-menu a:hover {
+    background: #BF6301;
+    color: white;
+    transform: translateX(6px);
+    box-shadow: 0 0 10px rgba(255, 106, 0, 0.35);
+}
+
+.icon {
+    width: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon i {
+    font-size: 22px;
+}
+
+.txt-link {
+    white-space: nowrap;
+}
+
+
+.conteudo {
+    flex: 1;
+    height: 900px;
+    overflow-y: auto;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    
+}
+
+h2 {
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: center;
+}
+
+.tarefas-box {
+    background: linear-gradient(to bottom, #102b73 0%, #081a47 35%, #020816 100%);
+    border: 2px solid #472B5E;
+    border-radius: 20px;
+    padding: 40px;
+    padding-bottom: 20px;
+    min-height: 350px;
+    position: relative;
+     box-shadow: 
+        0 0 6px rgba(255, 122, 0, 0.5),
+        0 0 13px #683607;
+}
+
+#tarefas {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#tarefas li {
+    background: #0E1942;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #472B5E;
+}
+
+.gerar-btn {
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    background-color: #FF6A00;
+    color: white;
+    border: none;
+    width: 160px;
+    height: 30px;
+    border-radius: 25px;
+    font-family: 'Krona One', sans-serif;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 
+        0 0 6px rgba(255, 122, 0, 0.8),
+        0 0 9px rgba(179, 88, 3, 0.8),
+        0 0 15px rgba(173, 85, 3, 0.5);
+}
+
+.gerar-btn:hover {
+    transform: scale(1.05);
+     box-shadow: 
+        0 0 6px rgba(255, 122, 0, 0.5),
+        0 0 13px #683607;
+}

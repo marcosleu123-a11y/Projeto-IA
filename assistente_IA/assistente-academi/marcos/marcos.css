@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #060B1D;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.card_cima {
+    background-color: #0E1942;
+    height: 100px;
+    width: 100%;
+    
+    position: relative;
+    z-index: 5;
+    box-shadow: 
+        0 0 6px rgba(255, 122, 0, 0.5),
+        0 0 13px #683607;
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    padding-top: 23px;
+}
+.imagem_vortexx {
+    height: 100px;
+    width: 100px;
+}
+.nome_logo {
+    color: #D1D1D1;
+    font-family: "Montserrat", sans-serif;
+    padding-bottom: 20px;
+}
+.logo-topo {
+    width: 200px;
+    height: 200px;
+}
+.card_do_card {
+    background-color: #0E1942;
+    height: 101px;
+    width: 68px;
+}
+
+.conteudo {
+    display: flex;
+    height: calc(100vh - 100px);
+}
+
+.card_lado {
+    background-color: #0E1942;
+    width: 67.4px;
+    min-width: 67.4px;
+    height: 100%;
+    position: relative;
+    z-index: 5;
+    border-right: 1px solid #412457;
+    overflow: hidden;
+    transition: width 0.4s ease, min-width 0.4s ease;
+    
+}
+.card_lado::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 100%;
+    background: rgba(255, 122, 0, 0.7);
+    filter: drop-shadow(0 0 6px rgba(255, 122, 0, 0.7));
+    box-shadow: 
+        0 0 6px rgba(255, 122, 0, 0.5),
+        0 0 13px #683607;
+}
+
+
+.card_lado:hover {
+    width: 220px;
+    min-width: 220px;
+}
+
+.menu-lateral {
+    width: 220px;
+    height: 100%;
+    padding: 30px 10px;
+}
+
+.menu-lateral ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.item-menu a {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: #D1D1D1;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 14px 16px;
+    border-radius: 12px;
+    font-family: "Montserrat", sans-serif;
+    transition: 0.3s;
+}
+
+.item-menu a:hover {
+    background: #BF6301;
+    color: white;
+}
+
+.icon {
+    min-width: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 10px;
+}
+
+.icon i {
+    font-size: 22px;
+}
+
+.txt-link {
+    white-space: nowrap;
+}
+
+.card_lado::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -2px;
+    width: 1px;
+    height: 100%;
+    background: rgba(255, 122, 0, 0.7);
+    box-shadow: 
+        0 0 16px rgba(255, 122, 0, 0.7),
+        0 0 25px rgba(255, 122, 0, 0.5),
+        0 0 30px #683607;
+    transition: 5s;
+}
+
+.area_principal {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 40px;
+    gap: 30px;
+    background-color: #020816;
+}
+
+.card_chat {
+    background: linear-gradient(to bottom, #102b73 0%, #081a47 35%, #020816 100%);
+    width: 85%;
+    max-width: 980px;
+    height: 360px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    border: 1.5px solid #6c3d8f;
+    flex-direction: column;
+    box-shadow: 
+        0 0 6px rgba(255, 122, 0, 0.5),
+        0 0 13px #683607;
+    transition: 5s;
+    position: relative;
+    overflow: hidden;
+}
+
+.card_chat::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 220px;
+    opacity: 0.10;
+    pointer-events: none;
+}
+
+.card_pergunta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 50px;
+    height: 50px;
+    width: 70%;
+    max-width: 850px;
+    border-radius: 20px;
+    padding: 6px 10px 6px 18px;
+    border: 2px solid #6c3d8f;
+    gap: 12px;
+    background: linear-gradient(to bottom, #163a96 0%, #0b2157 40%, #020816 100%);
+    box-shadow: 
+        0 0 6px rgba(255, 122, 0, 0.5),
+        0 0 13px #683607;
+}
+
+.campo_input {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.campo_input input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 12px;
+    padding: 0 8px 0 0;
+    font-family: "Kanit", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.campo_input input::placeholder {
+    color: #FFFFFF50;
+}
+
+.enviar {
+    height: 24px;
+    min-width: 30px;
+    max-width: 100px;
+    padding: 0 14px;
+    background-color: #FF6A00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border-radius: 20px;
+    box-shadow: 
+        0 0 6px rgba(255, 122, 0, 0.8),
+        0 0 11px rgba(255, 122, 0, 0.5);
+    transition: 5s;
+    text-shadow: 0 0 2px white;
+    flex-shrink: 0;
+}
+
+.enviar_texto {
+    font-family: "Krona One", sans-serif;
+    font-size: 12px;
+    padding-right: 10px;
+    font-weight: 100;
+}
+
+.aviao {
+    height: 34px;
+    width: 34px;
+    padding-bottom: 7px;
+}
+
+.animacao-fundo {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 420px;
+    height: 420px;
+    border: none;
+    pointer-events: none;
+    z-index: 1;
+    background: transparent;
+}
+
+
+.menu-lateral {
+    width: 100%;
+    height: 100%;
+    padding: 20px 10px;
+}
+
+.menu-lateral ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.item-menu a {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: #D1D1D1;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 14px 16px;
+    border-radius: 12px;
+    font-family: "Montserrat", sans-serif;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item-menu a:hover {
+    background: #BF6301;
+    color: white;
+    transform: translateX(6px);
+    box-shadow: 0 0 10px rgba(255, 106, 0, 0.35);
+}
+
+.icon {
+    width: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon i {
+    font-size: 22px;
+}
+
+.txt-link {
+    white-space: nowrap;
+}
+.imagem_vortex {
+    
+}
