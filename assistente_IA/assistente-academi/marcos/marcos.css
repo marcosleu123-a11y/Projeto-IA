@@ -322,6 +322,77 @@ body {
 .txt-link {
     white-space: nowrap;
 }
-.imagem_vortex {
-    
+
+html[data-tema="claro"] body,
+body.tema-claro {
+    background-color: #e9eefb !important;
+    color: #1e2f53 !important;
+}
+
+html[data-tema="claro"] .card_cima,
+html[data-tema="claro"] .card_lado,
+body.tema-claro .card_cima,
+body.tema-claro .card_lado {
+    background-color: #dbe4fb !important;
+}
+
+html[data-tema="claro"] .card_lado,
+body.tema-claro .card_lado {
+    border-right: 1px solid #aabce4 !important;
+}
+
+html[data-tema="claro"] .card_lado::after,
+body.tema-claro .card_lado::after {
+    background: rgba(191, 99, 1, 0.5) !important;
+    box-shadow:
+        0 0 10px rgba(255, 122, 0, 0.45),
+        0 0 16px rgba(255, 122, 0, 0.3) !important;
+}
+
+html[data-tema="claro"] .nome_logo,
+html[data-tema="claro"] .item-menu a,
+body.tema-claro .nome_logo,
+body.tema-claro .item-menu a {
+    color: #1e2f53 !important;
+}
+
+html[data-tema="claro"] .area_principal,
+body.tema-claro .area_principal {
+    background-color: #f3f6ff !important;
+}
+
+html[data-tema="claro"] .card_chat,
+body.tema-claro .card_chat {
+    background: linear-gradient(to bottom, #f7f9ff 0%, #eef3ff 50%, #e7edfb 100%) !important;
+    border: 1.5px solid #9db0da !important;
+    box-shadow: 
+        0 0 6px rgba(100, 120, 170, 0.22),
+        0 0 13px rgba(88, 110, 160, 0.14) !important;
+}
+
+html[data-tema="claro"] .card_pergunta,
+body.tema-claro .card_pergunta {
+    background: linear-gradient(to bottom, #f0f4ff 0%, #eaeffb 40%, #e3e9f5 100%) !important;
+    border: 2px solid #9db0da !important;
+    box-shadow: 
+        0 0 6px rgba(100, 120, 170, 0.22),
+        0 0 13px rgba(88, 110, 160, 0.14) !important;
+}
+
+html[data-tema="claro"] .campo_input input,
+body.tema-claro .campo_input input {
+    color: #1e2f53 !important;
+}
+
+html[data-tema="claro"] .campo_input input::placeholder,
+body.tema-claro .campo_input input::placeholder {
+    color: #536582 !important;
+}
+
+html[data-tema="claro"] .enviar,
+body.tema-claro .enviar {
+    background-color: #b45900 !important;
+    box-shadow: 
+        0 0 6px rgba(180, 89, 0, 0.6),
+        0 0 11px rgba(180, 89, 0, 0.4) !important;
 }

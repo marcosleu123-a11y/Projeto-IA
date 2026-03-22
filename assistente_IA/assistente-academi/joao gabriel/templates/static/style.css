@@ -201,3 +201,69 @@ h2 {
         0 0 6px rgba(255, 122, 0, 0.5),
         0 0 13px #683607;
 }
+
+html[data-tema="claro"] body,
+body.tema-claro {
+    background: #e9eefb !important;
+    color: #1e2f53 !important;
+}
+
+html[data-tema="claro"] .card_cima,
+html[data-tema="claro"] .card_lado,
+body.tema-claro .card_cima,
+body.tema-claro .card_lado {
+    background-color: #dbe4fb !important;
+}
+
+html[data-tema="claro"] .card_lado,
+body.tema-claro .card_lado {
+    border-right: 1px solid #aabce4 !important;
+}
+
+html[data-tema="claro"] .card_lado::after,
+body.tema-claro .card_lado::after {
+    background: rgba(191, 99, 1, 0.5) !important;
+    box-shadow:
+        0 0 10px rgba(255, 122, 0, 0.45),
+        0 0 16px rgba(255, 122, 0, 0.3) !important;
+}
+
+html[data-tema="claro"] .nome_logo,
+html[data-tema="claro"] .item-menu a,
+body.tema-claro .nome_logo,
+body.tema-claro .item-menu a {
+    color: #1e2f53 !important;
+}
+
+html[data-tema="claro"] .conteudo,
+body.tema-claro .conteudo {
+    background-color: #f3f6ff !important;
+}
+
+html[data-tema="claro"] .tarefas-box,
+body.tema-claro .tarefas-box {
+    background: linear-gradient(to bottom, #f7f9ff 0%, #eef3ff 50%, #e7edfb 100%) !important;
+    border: 2px solid #9db0da !important;
+}
+
+html[data-tema="claro"] #tarefas li,
+body.tema-claro #tarefas li {
+    background: #ffffff !important;
+    border: 1px solid #9db0da !important;
+    color: #1e2f53 !important;
+}
+
+html[data-tema="claro"] .gerar-btn,
+body.tema-claro .gerar-btn {
+    background-color: #b45900 !important;
+    box-shadow: 
+        0 0 6px rgba(180, 89, 0, 0.6),
+        0 0 9px rgba(180, 89, 0, 0.5) !important;
+}
+
+html[data-tema="claro"] .gerar-btn:hover,
+body.tema-claro .gerar-btn:hover {
+    box-shadow: 
+        0 0 6px rgba(180, 89, 0, 0.4),
+        0 0 13px rgba(180, 89, 0, 0.2) !important;
+}

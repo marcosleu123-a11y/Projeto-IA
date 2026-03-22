@@ -276,3 +276,103 @@ body {
     color: #D4A5FF;
     border: 1px solid #472B5E;
 }
+
+html[data-tema="claro"] body,
+body.tema-claro {
+    background-color: #e9eefb !important;
+    color: #1e2f53 !important;
+}
+
+html[data-tema="claro"] .card_cima,
+html[data-tema="claro"] .card_lado,
+body.tema-claro .card_cima,
+body.tema-claro .card_lado {
+    background-color: #dbe4fb !important;
+}
+
+html[data-tema="claro"] .card_lado,
+body.tema-claro .card_lado {
+    border-right: 1px solid #aabce4 !important;
+}
+
+html[data-tema="claro"] .card_lado::after,
+body.tema-claro .card_lado::after {
+    background: rgba(191, 99, 1, 0.5) !important;
+    box-shadow:
+        0 0 10px rgba(255, 122, 0, 0.45),
+        0 0 16px rgba(255, 122, 0, 0.3) !important;
+}
+
+html[data-tema="claro"] .nome_logo,
+html[data-tema="claro"] .item-menu a,
+body.tema-claro .nome_logo,
+body.tema-claro .item-menu a {
+    color: #1e2f53 !important;
+}
+
+html[data-tema="claro"] .area_principal,
+body.tema-claro .area_principal {
+    background-color: #f3f6ff !important;
+}
+
+html[data-tema="claro"] .cartao,
+body.tema-claro .cartao {
+    background: linear-gradient(to bottom, #f7f9ff 0%, #eef3ff 50%, #e7edfb 100%) !important;
+    border: 1px solid #9db0da !important;
+    box-shadow: 
+        0 0 3px rgba(100, 120, 170, 0.22),
+        0 0 8px rgba(88, 110, 160, 0.14) !important;
+}
+
+html[data-tema="claro"] #campo-tarefa,
+body.tema-claro #campo-tarefa {
+    background: linear-gradient(to right, #f5f8ff, #f0f4ff) !important;
+    color: #1e2f53 !important;
+    border: 1px solid #aabce4 !important;
+}
+
+html[data-tema="claro"] #campo-tarefa:focus,
+body.tema-claro #campo-tarefa:focus {
+    border-color: #b45900 !important;
+}
+
+html[data-tema="claro"] #relogio,
+body.tema-claro #relogio {
+    color: #1e2f53 !important;
+}
+
+html[data-tema="claro"] #area-relogio p,
+body.tema-claro #area-relogio p {
+    color: #4d628f !important;
+}
+
+html[data-tema="claro"] .botao-cinza,
+body.tema-claro .botao-cinza {
+    color: #536582 !important;
+    border: 1px solid #aabce4 !important;
+}
+
+html[data-tema="claro"] .botao-cinza.ativo,
+body.tema-claro .botao-cinza.ativo {
+    background-color: rgba(180, 89, 0, 0.1) !important;
+    color: #b45900 !important;
+    border-color: #b45900 !important;
+}
+
+html[data-tema="claro"] .iniciar,
+body.tema-claro .iniciar {
+    background: linear-gradient(90deg, #b45900, #994200) !important;
+}
+
+html[data-tema="claro"] .pausar,
+body.tema-claro .pausar {
+    color: #1e2f53 !important;
+    border: 2px solid #aabce4 !important;
+}
+
+html[data-tema="claro"] .finalizar,
+body.tema-claro .finalizar {
+    background-color: #e8d5ff !important;
+    color: #6b4a8f !important;
+    border: 1px solid #9db0da !important;
+}

@@ -202,8 +202,8 @@ body {
 }
 
 .settings-panel {
-    max-width: 520px;
-    max-height: 470px;
+    max-width: 600px;
+    max-height: 570px;
 }
 
 .support-panel {
@@ -275,10 +275,10 @@ body {
     background-color: #FF6A00;
     color: white;
     padding: 12px 22px;
-    height: 10px;
+    height: 35px;
     border-radius: 14px;
     cursor: pointer;
-    font-size: 10px;
+    font-size: 13px;
     border: none;
     font-family: "Krona One", sans-serif;
     transition: 0.2s ease;
@@ -367,4 +367,94 @@ body {
     .header-brand p {
         font-size: 0.8rem;
     }
+}
+
+html[data-tema="claro"] body,
+body.tema-claro {
+    background-color: #e9eefb !important;
+    color: #1e2f53 !important;
+}
+
+html[data-tema="claro"] .card_cima,
+html[data-tema="claro"] .card_lado,
+body.tema-claro .card_cima,
+body.tema-claro .card_lado {
+    background-color: #dbe4fb !important;
+}
+
+html[data-tema="claro"] .card_lado,
+body.tema-claro .card_lado {
+    border-right: 1px solid #aabce4 !important;
+}
+
+html[data-tema="claro"] .card_lado::after,
+body.tema-claro .card_lado::after {
+    background: rgba(191, 99, 1, 0.5) !important;
+    box-shadow:
+        0 0 10px rgba(255, 122, 0, 0.45),
+        0 0 16px rgba(255, 122, 0, 0.3) !important;
+}
+
+html[data-tema="claro"] .nome_logo,
+html[data-tema="claro"] .item-menu a,
+html[data-tema="claro"] .panel h2,
+html[data-tema="claro"] .field label,
+body.tema-claro .nome_logo,
+body.tema-claro .item-menu a,
+body.tema-claro .panel h2,
+body.tema-claro .field label {
+    color: #1e2f53 !important;
+}
+
+html[data-tema="claro"] .area_principal,
+body.tema-claro .area_principal {
+    background-color: #f3f6ff !important;
+}
+
+html[data-tema="claro"] .panel,
+body.tema-claro .panel {
+    background: linear-gradient(to bottom, #f7f9ff 0%, #eef3ff 50%, #e7edfb 100%) !important;
+    border: 1.5px solid #9db0da !important;
+    box-shadow:
+        0 0 6px rgba(100, 120, 170, 0.22),
+        0 0 14px rgba(88, 110, 160, 0.14) !important;
+}
+
+html[data-tema="claro"] .panel .subtitle,
+html[data-tema="claro"] .support-box p,
+body.tema-claro .panel .subtitle,
+body.tema-claro .support-box p {
+    color: #4d628f !important;
+}
+
+html[data-tema="claro"] .field input,
+html[data-tema="claro"] .select-field,
+body.tema-claro .field input,
+body.tema-claro .select-field {
+    background: #ffffff !important;
+    color: #243a62 !important;
+    border: 1px solid #aabce4 !important;
+}
+
+html[data-tema="claro"] .field input:focus,
+html[data-tema="claro"] .select-field:focus,
+body.tema-claro .field input:focus,
+body.tema-claro .select-field:focus {
+    border-color: #bf6301 !important;
+    box-shadow: 0 0 0 3px rgba(191, 99, 1, 0.12) !important;
+}
+
+html[data-tema="claro"] .btn-secondary,
+body.tema-claro .btn-secondary {
+    color: #b45900 !important;
+    border-color: #b45900 !important;
+}
+
+html[data-tema="claro"] .btn-secondary:hover,
+body.tema-claro .btn-secondary:hover {
+    background: #b45900 !important;
+    color: white !important;
+    box-shadow:
+        0 0 6px rgba(180, 89, 0, 0.5),
+        0 0 13px rgba(180, 89, 0, 0.3) !important;
 }
