@@ -253,8 +253,8 @@ body {
 
 
 .user-photo {
-    width: 64px;
-    height: 64px;
+    width: 100px;
+    height: 100px;
     background-color: #ffffff;
     border-radius: 12px;
     display: flex;
