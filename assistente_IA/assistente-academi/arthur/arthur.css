@@ -2,7 +2,7 @@
 
 body{
     margin:0px;
-    height:520px;
+    min-height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -13,12 +13,12 @@ body{
 
 
 .login-container{
-    width:500px;
+    width:min(500px, 92vw);
     align-self:center;
     padding: 25px;
     padding-top: 0px;
-    margin-top: 45%;
-    transform: translateY(-50%);
+    margin-top: 0;
+    transform: none;
     background: linear-gradient(to bottom, #0c2568 0%, #081a47 35%, #0d0216 100%);
     border-radius:14px;
     color:white;
@@ -113,8 +113,7 @@ input{
 }
 button{
     padding:12px;
-    padding-left:230px;
-    padding-right:230px;
+    width:100%;
     border:none;
     border-radius:8px;
     background:#e4681a;
@@ -167,4 +166,25 @@ button:hover{
 }
 .senha {
     padding-bottom: 10px;
+}
+
+@media (max-width: 600px) {
+    .login-container {
+        padding: 20px 16px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+    }
+
+    .options {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .logo {
+        width: 84px;
+        height: 84px;
+    }
 }
