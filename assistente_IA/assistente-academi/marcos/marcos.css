@@ -397,4 +397,86 @@ body.tema-claro .enviar {
         0 0 11px rgba(180, 89, 0, 0.4) !important;
 }
 
+@media (max-width: 900px) {
+    body {
+        height: auto;
+        min-height: 100vh;
+        overflow: auto;
+    }
 
+    .conteudo {
+        flex-direction: column;
+        height: auto;
+        min-height: calc(100vh - 100px);
+    }
+
+    .card_lado {
+        width: 100%;
+        min-width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid #412457;
+    }
+
+    .card_lado:hover {
+        width: 100%;
+        min-width: 100%;
+    }
+
+    .card_lado::after {
+        display: none;
+    }
+
+    .menu-lateral {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+    }
+
+    .menu-lateral ul {
+        flex-direction: row;
+        gap: 8px;
+        overflow-x: auto;
+        scrollbar-width: thin;
+        padding-bottom: 4px;
+    }
+
+    .item-menu a {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+
+    .item-menu a:hover {
+        transform: none;
+    }
+
+    .icon i {
+        font-size: 18px;
+    }
+
+    .area_principal {
+        padding: 20px 14px;
+        gap: 18px;
+    }
+
+    .card_chat {
+        width: 100%;
+        height: 300px;
+    }
+
+    .animacao-fundo {
+        width: 300px;
+        height: 300px;
+    }
+
+    .card_pergunta {
+        margin-top: 0;
+        width: 100%;
+        height: auto;
+        min-height: 52px;
+    }
+
+    .enviar {
+        min-width: 78px;
+    }
+}
