@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00E0FF"/>
+      <stop offset="100%" stop-color="#FF6A1A"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FF6A1A"/>
+      <stop offset="100%" stop-color="#00E0FF"/>
+    </linearGradient>
+    <linearGradient id="petal3grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00E0FF" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#FF6A1A" stop-opacity="0.8"/>
+    </linearGradient>
+    <radialGradient id="coreDotGrad" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="45%" stop-color="#00E0FF"/>
+      <stop offset="100%" stop-color="#006A99"/>
+    </radialGradient>
+
+    <filter id="glowC" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glowO" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glowTip" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="7" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="coreGlowF" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="9" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Orbit dashes -->
+  <circle cx="200" cy="200" r="155" fill="none" stroke="#00E0FF" stroke-width="1"
+    stroke-dasharray="3 18" opacity="0.35"/>
+  <circle cx="200" cy="200" r="155" fill="none" stroke="#FF6A1A" stroke-width="1"
+    stroke-dasharray="3 18" stroke-dashoffset="10.5" opacity="0.35"/>
+
+  <!-- Petal glow shadows -->
+  <path d="M200 200 C200 200,155 170,148 130 C141 90,170 68,200 68 C200 68,200 68,200 200"
+    fill="none" stroke="#00E0FF" stroke-width="28" stroke-linecap="round" opacity="0.12" filter="url(#glowC)"/>
+  <path d="M200 200 C200 200,250 195,278 222 C306 249,300 284,277 308 C277 308,277 308,200 200"
+    fill="none" stroke="#FF6A1A" stroke-width="28" stroke-linecap="round" opacity="0.12" filter="url(#glowO)"/>
+  <path d="M200 200 C200 200,155 230,122 222 C89 214,75 181,86 152 C86 152,86 152,200 200"
+    fill="none" stroke="url(#g1)" stroke-width="28" stroke-linecap="round" opacity="0.08"/>
+
+  <!-- Petals mid glow -->
+  <path d="M200 200 C200 200,155 170,148 130 C141 90,170 68,200 68 C200 68,200 68,200 200"
+    fill="none" stroke="#00E0FF" stroke-width="18" stroke-linecap="round" opacity="0.25" filter="url(#glowC)"/>
+  <path d="M200 200 C200 200,250 195,278 222 C306 249,300 284,277 308 C277 308,277 308,200 200"
+    fill="none" stroke="#FF6A1A" stroke-width="18" stroke-linecap="round" opacity="0.25" filter="url(#glowO)"/>
+  <path d="M200 200 C200 200,155 230,122 222 C89 214,75 181,86 152 C86 152,86 152,200 200"
+    fill="none" stroke="url(#petal3grad)" stroke-width="18" stroke-linecap="round" opacity="0.18"/>
+
+  <!-- Petals main -->
+  <path d="M200 200 C200 200,155 170,148 130 C141 90,170 68,200 68 C200 68,200 68,200 200"
+    fill="none" stroke="#00E0FF" stroke-width="14" stroke-linecap="round" opacity="1" filter="url(#glowC)"/>
+  <path d="M200 200 C200 200,250 195,278 222 C306 249,300 284,277 308 C277 308,277 308,200 200"
+    fill="none" stroke="#FF6A1A" stroke-width="14" stroke-linecap="round" opacity="1" filter="url(#glowO)"/>
+  <path d="M200 200 C200 200,155 230,122 222 C89 214,75 181,86 152 C86 152,86 152,200 200"
+    fill="none" stroke="url(#petal3grad)" stroke-width="14" stroke-linecap="round" opacity="0.9"/>
+
+  <!-- Tip halos -->
+  <circle cx="200" cy="68"  r="18" fill="#00E0FF" opacity="0.2" filter="url(#glowTip)"/>
+  <circle cx="277" cy="308" r="18" fill="#FF6A1A" opacity="0.2" filter="url(#glowTip)"/>
+  <circle cx="86"  cy="152" r="14" fill="#00E0FF" opacity="0.12" filter="url(#glowTip)"/>
+
+  <!-- Tip dots -->
+  <circle cx="200" cy="68"  r="9" fill="#00E0FF" opacity="0.95" filter="url(#glowC)"/>
+  <circle cx="200" cy="68"  r="4" fill="white" opacity="0.95"/>
+  <circle cx="277" cy="308" r="9" fill="#FF6A1A" opacity="0.95" filter="url(#glowO)"/>
+  <circle cx="277" cy="308" r="4" fill="white" opacity="0.95"/>
+  <circle cx="86"  cy="152" r="7" fill="url(#g1)" opacity="0.85" filter="url(#glowC)"/>
+  <circle cx="86"  cy="152" r="3" fill="white" opacity="0.85"/>
+
+  <!-- Core halo -->
+  <circle cx="200" cy="200" r="26" fill="url(#g1)" opacity="0.1" filter="url(#coreGlowF)"/>
+  <!-- Core ring -->
+  <circle cx="200" cy="200" r="17" fill="none" stroke="url(#g1)" stroke-width="2.2" opacity="0.95" filter="url(#glowC)"/>
+  <!-- Core dot -->
+  <circle cx="200" cy="200" r="9" fill="url(#coreDotGrad)" filter="url(#coreGlowF)"/>
+  <circle cx="196" cy="196" r="3" fill="white" opacity="0.75"/>
+</svg>
