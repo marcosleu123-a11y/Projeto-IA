@@ -137,6 +137,10 @@ body {
     padding-right: 10px;
 }
 
+.btn-sair{
+    margin-top: 415px;
+}
+
 .icon i {
     font-size: 22px;
 }

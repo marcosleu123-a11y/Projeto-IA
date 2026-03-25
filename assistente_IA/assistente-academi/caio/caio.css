@@ -126,7 +126,9 @@ body {
         0 0 13px #683607;
 }
 
-
+.btn-sair{
+    margin-top: 415px;
+}
 
 .icon {
     min-width: 24px;

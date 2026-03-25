@@ -97,6 +97,10 @@ body {
     gap: 10px;
 }
 
+.btn-sair{
+    margin-top: 415px;
+}
+
 .item-menu a {
     display: flex;
     align-items: center;
