@@ -41,6 +41,17 @@ body {
     height: 100px;
     width: 100px;
 }
+
+.imagem-perfil {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: 40px;
+    cursor: pointer;
+}
+
 .nome_logo {
     color: #D1D1D1;
     font-family: "Montserrat", sans-serif;
@@ -127,7 +138,7 @@ body {
 }
 
 .btn-sair{
-    margin-top: 415px;
+    margin-top: 160px;
 }
 
 .icon {
@@ -432,6 +443,10 @@ body.tema-claro .btn-upload:hover {
     .item-menu a {
         padding: 10px 12px;
         font-size: 14px;
+    }
+
+    .btn-sair {
+        margin-top: 0;
     }
 
     .item-menu a:hover {

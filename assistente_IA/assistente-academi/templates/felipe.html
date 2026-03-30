@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modo Foco - Vortex</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="felipe.css">
-    <script src="../tema.js"></script>
+    <link rel="stylesheet" href="{{url_for('static', filename='felipe.css') }}">
+    <script src="{{url_for('static', filename='tema.js') }}"></script>
 </head>
 <body>
     <div class="card_cima">
         
-            <img class="imagem_vortexx"src="/assistente_IA/assistente-academi/imagens/logo_transparente (1).svg" alt="logo do vortex"> 
+            <img class="imagem_vortexx"src="{{ url_for('static', filename='imagens/logo_transparente (1).svg') }}" alt="logo do vortex"> 
             <h1 class="nome_logo">Vortex AI</h1>
     </div>
 
@@ -20,41 +20,41 @@
             <nav class="menu-lateral">
                 <ul>
                     <li class="item-menu">
-                        <a href="/assistente_IA/assistente-academi/marcos/marcos.html">
+                        <a href="{{ url_for('assistente_academica') }}">
                             <span class="icon"><i class="bi bi-robot"></i></span>
                             <span class="txt-link">Assistente IA</span>
                         </a>
                     </li>
 
                     <li class="item-menu">
-                        <a href="felipe.html">
+                        <a href="{{ url_for('modo_foco') }}">
                             <span class="icon"><i class="bi bi-bullseye"></i></span>
                             <span class="txt-link">Modo Foco</span>
                         </a>
                     </li>
 
                     <li class="item-menu">
-                        <a href="/assistente_IA/assistente-academi/joao gabriel/templates/index.html">
+                        <a href="{{ url_for('tarefas') }}">
                             <span class="icon"><i class="bi bi-book-half"></i></span>
                             <span class="txt-link">Tarefas</span>
                         </a>
                     </li>
 
                     <li class="item-menu">
-                        <a href="/assistente_IA/assistente-academi/caio/caio.html">
+                        <a href="{{ url_for('perfil') }}">
                             <span class="icon"><i class="bi bi-person-circle"></i></span>
                             <span class="txt-link">Perfil</span>
                         </a>
                     </li>
 
                     <li class="item-menu">
-                       <a href="/assistente_IA/assistente-academi/joao lucas/pedrosa.html">
+                       <a href="{{ url_for('ajustes') }}">
                             <span class="icon"><i class="bi bi-gear-fill"></i></span>
                             <span class="txt-link">Ajustes</span>
                         </a>
                     </li>
                     <li class="item-menu">
-                        <a href="/assistente_IA/assistente-academi/arthur/arthur.html" class="btn-sair">
+                        <a href="{{ url_for('login') }}" class="btn-sair">
                             <span class="icon"><i class="bi bi-box-arrow-left"></i></span>
                             <span class="txt-link">Sair</span>
                         </a>

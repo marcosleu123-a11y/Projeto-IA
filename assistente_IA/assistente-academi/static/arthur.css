@@ -63,6 +63,26 @@ body{
     margin-top: 0px;
 }
 
+.mensagem {
+    padding: 10px 12px;
+    border-radius: 8px;
+    margin: 12px 0;
+    font-size: 14px;
+    text-align: left;
+}
+
+.mensagem.erro {
+    background: rgba(229, 91, 67, 0.15);
+    border: 1px solid rgba(229, 91, 67, 0.7);
+    color: #ffd2cc;
+}
+
+.mensagem.sucesso {
+    background: rgba(77, 186, 117, 0.15);
+    border: 1px solid rgba(77, 186, 117, 0.75);
+    color: #d8ffe4;
+}
+
 
 form{
     display:flex;

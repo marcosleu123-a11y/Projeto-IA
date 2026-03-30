@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Assistente Vortex</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='arthur.css') }}">
+</head>
+
+<body>
+
+<div class="login-container">
+
+    <h2>Assistente Acadêmica Vortex 
+    <img class="logo" src="{{ url_for('static', filename='imagens/logo_transparente (1).svg') }}" alt="Logo UniEvangélica">
+    </h2>
+    <p class="subtitle">Bem-vindo à sua área de estudos.</p>
+
+    {% if mensagem %}
+    <p class="mensagem {{ tipo_mensagem }}">{{ mensagem }}</p>
+    {% endif %}
+
+    <form method="POST" action="{{ url_for('login') }}">
+
+        <label class="matricula">Matrícula</label>
+        <input type="text" name="matricula" placeholder="Digite sua matrícula" required>
+
+        <label class="senha">Senha</label>
+        <input type="password" name="senha" placeholder="Digite sua senha" required>
+
+        <button type="submit">Entrar</button>
+    </form>
+
+    <div class="options">
+        <label class="checkbox"><input type="checkbox"> Lembrar de mim</label>
+        <a class="forgot" href="#" >Esqueci minha senha</a>
+    </div>
+
+    <p class="register">Sem conta? <a href="{{ url_for('cadastro') }}">Clique aqui para cadastrar-se</a></p>
+
+</div>
+
+</body>
+</html>
