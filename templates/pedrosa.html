@@ -73,7 +73,11 @@
                     <h2>Configurações de Conta</h2>
                     <p class="subtitle">Edite suas informações e preferências.</p>
 
-                    <form class="form-settings">
+                    {% if mensagem %}
+                        <p style="color: #28a745; font-weight: bold; margin-bottom: 15px;">{{ mensagem }}</p>
+                    {% endif %}
+
+                    <form class="settings-form" method="POST">
                         <div class="field">
                             <label for="idioma">Idioma do Sistema</label>
                             <select id="idioma" class="select-field">
@@ -93,17 +97,16 @@
 
                         <div class="field">
                             <label for="nome">Nome Completo</label>
-                            <input id="nome" type="text" placeholder="Aluno">
+                            <input type="text" name="nome" id="username" value="{{ usuario.nome }}" placeholder="Aluno" class="input-field">
                         </div>
 
                         <div class="field">
                             <label for="email">E-mail</label>
-                            <input id="email" type="email" placeholder="Aluno@gmail.com">
-                        </div>
+                            <input type="email" name="email" id="email" value="{{ usuario.email }}" placeholder="Aluno@gmail.com" class="input-field">                        </div>
 
                         <div class="field">
                             <label for="senha">Senha</label>
-                            <input id="senha" type="password" placeholder="Nova senha">
+                            <input name="senha" id="senha" type="password" placeholder="Nova senha" class="input-field">
                         </div>
 
                         <button type="submit" class="btn-primary">Salvar</button>

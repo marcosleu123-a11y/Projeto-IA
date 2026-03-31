@@ -454,6 +454,10 @@ body.tema-claro .enviar {
         transform: none;
     }
 
+    .btn-sair {
+        margin-top: 0;
+    }
+
     .icon i {
         font-size: 18px;
     }

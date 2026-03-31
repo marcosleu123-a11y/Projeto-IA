@@ -279,6 +279,7 @@ body {
     background-color: #FF6A00;
     color: white;
     padding: 12px 22px;
+    margin-top: 10px;
     height: 35px;
     border-radius: 14px;
     cursor: pointer;
@@ -394,6 +395,10 @@ body {
     .item-menu a {
         padding: 10px 12px;
         font-size: 14px;
+    }
+    
+    .btn-sair {
+        margin-top: 0;
     }
 
     .item-menu a:hover {

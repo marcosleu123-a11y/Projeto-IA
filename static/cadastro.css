@@ -188,6 +188,14 @@ button:hover{
     padding-bottom: 10px;
 }
 
+.nome {
+    padding-bottom: 10px;
+}
+
+.email {
+    padding-bottom: 10px;
+}
+
 @media (max-width: 600px) {
     .login-container {
         padding: 20px 16px;

@@ -438,6 +438,10 @@ body.tema-claro .finalizar {
         font-size: 18px;
     }
 
+    .btn-sair {
+        margin-top: 0;
+    }
+
     .area_principal {
         padding: 20px 14px;
         align-items: stretch;
