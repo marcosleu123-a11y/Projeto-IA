@@ -122,11 +122,11 @@ def perfil():
 
 @app.route('/ajustes', methods=['GET', 'POST'])
 def ajustes():
-    # 1. Proteção: Se o cara não fez login, manda pra tela de login
+
     if 'usuario_logado' not in session:
         return redirect(url_for('login'))
 
-    matricula_atual = session['usuario_logado']  # Pegamos da mochila!
+    matricula_atual = session['usuario_logado']  
     dados_usuario = {'matricula': matricula_atual, 'nome': '', 'email': ''}
     mensagem_sucesso = None
 
@@ -136,7 +136,6 @@ def ajustes():
         )
         cursor = conexao.cursor(dictionary=True)
 
-        # 2. SALVAR DADOS (Se o botão foi clicado)
         if request.method == 'POST':
             nome_digitado = request.form.get('nome')
             email_digitado = request.form.get('email')
@@ -163,13 +162,11 @@ def ajustes():
             conexao.commit()
             mensagem_sucesso = "Dados atualizados com sucesso!"
 
-        # 3. BUSCAR DADOS (Sempre roda para mostrar na tela)
         cursor.execute(
             "SELECT matricula, nome, email FROM users WHERE matricula = %s", (matricula_atual,))
         resultado = cursor.fetchone()
 
         if resultado:
-            # Substitui os None do banco por strings vazias para não ficar feio no HTML
             dados_usuario['nome'] = resultado['nome'] if resultado['nome'] else ''
             dados_usuario['email'] = resultado['email'] if resultado['email'] else ''
 
