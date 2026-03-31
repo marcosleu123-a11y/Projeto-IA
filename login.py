@@ -4,6 +4,7 @@ import mysql.connector
 
 app = Flask(__name__)
 
+# Sessão Secreta para manter o usuário logado
 app.secret_key = 'vortex_secreto_123'
 
 
