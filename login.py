@@ -1,11 +1,14 @@
 import os
 from flask import Flask, request, render_template, redirect, url_for, send_from_directory, session, jsonify
 import mysql.connector
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = Flask(__name__)
 
 # Sessão Secreta para manter o usuário logado
-app.secret_key = 'vortex_secreto_123'
+app.secret_key = os.getenv('FLASK_SECRET_KEY')
 
 
 @app.route('/')
@@ -39,10 +42,10 @@ def login():
         try:
 
             conexao = mysql.connector.connect(
-                host='localhost',
-                user='root',
-                password='Caiofabio2109',
-                database='usersdb'
+                host=os.getenv('DB_HOST'),
+                user=os.getenv('DB_USER'),
+                password=os.getenv('DB_PASSWORD'),
+                database=os.getenv('DB_NAME')
             )
 
             cursor = conexao.cursor(dictionary=True)
@@ -97,10 +100,10 @@ def perfil():
 
     try:
         conexao = mysql.connector.connect(
-            host='localhost',
-            user='root',
-            password='Caiofabio2109',
-            database='usersdb'
+            host=os.getenv('DB_HOST'),
+            user=os.getenv('DB_USER'),
+            password=os.getenv('DB_PASSWORD'),
+            database=os.getenv('DB_NAME')
         )
         cursor = conexao.cursor(dictionary=True)
         cursor.execute(
@@ -133,7 +136,10 @@ def ajustes():
 
     try:
         conexao = mysql.connector.connect(
-            host='localhost', user='root', password='Caiofabio2109', database='usersdb'
+            host=os.getenv('DB_HOST'),
+            user=os.getenv('DB_USER'),
+            password=os.getenv('DB_PASSWORD'),
+            database=os.getenv('DB_NAME')
         )
         cursor = conexao.cursor(dictionary=True)
 
@@ -197,10 +203,10 @@ def cadastro():
 
         try:
             conexao = mysql.connector.connect(
-                host='localhost',
-                user='root',
-                password='Caiofabio2109',
-                database='usersdb'
+                host=os.getenv('DB_HOST'),
+                user=os.getenv('DB_USER'),
+                password=os.getenv('DB_PASSWORD'),
+                database=os.getenv('DB_NAME')
             )
             cursor = conexao.cursor()
             cursor.execute(
