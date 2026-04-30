@@ -1,0 +1,419 @@
+body {
+    margin: 0;
+    font-family: 'Krona One', sans-serif;
+    background: #060B1D;
+    color: white;
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+.card_cima {
+    background-color: #0E1942;
+    height: 100px;
+    width: 100%;
+    
+    position: relative;
+    z-index: 5;
+    box-shadow: 
+        0 0 6px rgba(255, 122, 0, 0.5),
+        0 0 13px #683607;
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    padding-top: 23px;
+}
+.imagem_vortexx {
+    height: 100px;
+    width: 100px;
+}
+.nome_logo {
+    color: #D1D1D1;
+    font-family: "Montserrat", sans-serif;
+    padding-bottom: 20px;
+}
+
+.card_do_card {
+    background-color: #0E1942;
+    height: 101px;
+    width: 68px;
+}
+
+
+.layout {
+    display: flex;
+    height: calc(100vh - 100px);
+}
+
+
+.card_lado {
+    --sidebar-collapsed: 66px;
+    background-color: #0E1942;
+    width: 66px;
+    min-width: 66px;
+    height: 100%;
+    position: relative;
+    z-index: 5;
+    border-right: 1px solid #6c3d8f;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    scrollbar-color: #BF6301 transparent;
+    scrollbar-width: none;
+    transition: width 0.4s ease, min-width 0.4s ease;
+}
+
+.card_lado::-webkit-scrollbar {
+    width: 0;
+}
+
+.card_lado::-webkit-scrollbar-thumb {
+    background-color: #BF6301;
+    border-radius: 999px;
+}
+
+.card_lado:hover {
+    width: 220px;
+    min-width: 220px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+}
+
+.card_lado:hover::-webkit-scrollbar {
+    width: 6px;
+}
+
+.card_lado::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -2px;
+    width: 1px;
+    height: 100%;
+    background: rgba(255, 122, 0, 0.7);
+    box-shadow:
+        0 0 16px rgba(255, 122, 0, 0.7),
+        0 0 25px rgba(255, 122, 0, 0.5),
+        0 0 30px #683607;
+}
+
+.menu-lateral {
+    width: 220px;
+    min-height: 100%;
+    padding: 20px 10px;
+}
+
+.menu-lateral ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+}
+
+.item-menu a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    width: calc(var(--sidebar-collapsed) - 20px);
+    overflow: hidden;
+    color: #D1D1D1;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 14px 0;
+    border-radius: 12px;
+    font-family: "Montserrat", sans-serif;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card_lado:hover .item-menu a {
+    justify-content: flex-start;
+    gap: 16px;
+    width: 194px;
+    padding: 14px 16px;
+}
+
+.item-menu a:hover {
+    background: #BF6301;
+    color: white;
+    transform: translateX(6px);
+    box-shadow: 0 0 10px rgba(255, 106, 0, 0.35);
+}
+
+.btn-sair{
+    margin-top: 24px;
+}
+
+.icon {
+    flex: 0 0 24px;
+    width: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon i {
+    font-size: 22px;
+}
+
+.txt-link {
+    opacity: 0;
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: opacity 0.2s ease;
+}
+
+.card_lado:hover .txt-link {
+    opacity: 1;
+    width: auto;
+}
+
+
+.conteudo {
+    flex: 1;
+    height: 900px;
+    overflow-y: auto;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    
+}
+
+h2 {
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: center;
+}
+
+.tarefas-box {
+    background: linear-gradient(to bottom, #102b73 0%, #081a47 35%, #020816 100%);
+    border: 2px solid #472B5E;
+    border-radius: 20px;
+    padding: 40px;
+    padding-bottom: 20px;
+    min-height: 350px;
+    position: relative;
+     box-shadow: 
+        0 0 6px rgba(255, 122, 0, 0.5),
+        0 0 13px #683607;
+}
+
+#tarefas {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#tarefas li {
+    background: #0E1942;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #472B5E;
+}
+
+.gerar-btn {
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    background-color: #FF6A00;
+    color: white;
+    border: none;
+    width: 160px;
+    height: 30px;
+    border-radius: 25px;
+    font-family: 'Krona One', sans-serif;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 
+        0 0 6px rgba(255, 122, 0, 0.8),
+        0 0 9px rgba(179, 88, 3, 0.8),
+        0 0 15px rgba(173, 85, 3, 0.5);
+}
+
+.gerar-btn:hover {
+    transform: scale(1.05);
+     box-shadow: 
+        0 0 6px rgba(255, 122, 0, 0.5),
+        0 0 13px #683607;
+}
+
+@media (max-width: 900px) {
+    body {
+        height: auto;
+        min-height: 100vh;
+        overflow: auto;
+    }
+
+    .layout {
+        flex-direction: column;
+        height: auto;
+        min-height: calc(100vh - 100px);
+    }
+
+    .card_lado {
+        width: 100%;
+        min-width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid #6c3d8f;
+        overflow: visible;
+        scrollbar-width: auto;
+    }
+
+    .card_lado:hover {
+        width: 100%;
+        min-width: 100%;
+    }
+
+    .card_lado::after {
+        display: none;
+    }
+
+    .menu-lateral {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+    }
+
+    .menu-lateral ul {
+        flex-direction: row;
+        gap: 8px;
+        overflow-x: auto;
+        scrollbar-width: thin;
+        padding-bottom: 4px;
+    }
+
+    .item-menu a {
+        justify-content: flex-start;
+        gap: 16px;
+        width: auto;
+        overflow: visible;
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+
+    .card_lado:hover .item-menu a {
+        justify-content: flex-start;
+        gap: 16px;
+        width: auto;
+        padding: 10px 12px;
+    }
+
+    .txt-link {
+        opacity: 1;
+        width: auto;
+        overflow: visible;
+    }
+
+    .item-menu a:hover {
+        transform: none;
+    }
+
+    .btn-sair {
+        margin-top: 0;
+    }
+
+    .icon i {
+        font-size: 18px;
+    }
+
+    .conteudo {
+        height: auto;
+        min-height: 0;
+        padding: 20px 14px;
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    .tarefas-box {
+        padding: 20px 16px 70px;
+    }
+
+    .gerar-btn {
+        left: 16px;
+        right: 16px;
+        bottom: 16px;
+        width: auto;
+        height: 38px;
+    }
+
+    #tarefas li {
+        align-items: flex-start;
+    }
+}
+
+html[data-tema="claro"] body,
+body.tema-claro {
+    background: #e9eefb !important;
+    color: #1e2f53 !important;
+}
+
+html[data-tema="claro"] .card_cima,
+html[data-tema="claro"] .card_lado,
+body.tema-claro .card_cima,
+body.tema-claro .card_lado {
+    background-color: #dbe4fb !important;
+}
+
+html[data-tema="claro"] .card_lado,
+body.tema-claro .card_lado {
+    border-right: 1px solid #aabce4 !important;
+}
+
+html[data-tema="claro"] .card_lado::after,
+body.tema-claro .card_lado::after {
+    background: rgba(191, 99, 1, 0.5) !important;
+    box-shadow:
+        0 0 10px rgba(255, 122, 0, 0.45),
+        0 0 16px rgba(255, 122, 0, 0.3) !important;
+}
+
+html[data-tema="claro"] .nome_logo,
+html[data-tema="claro"] .item-menu a,
+body.tema-claro .nome_logo,
+body.tema-claro .item-menu a {
+    color: #1e2f53 !important;
+}
+
+html[data-tema="claro"] .conteudo,
+body.tema-claro .conteudo {
+    background-color: #f3f6ff !important;
+}
+
+html[data-tema="claro"] .tarefas-box,
+body.tema-claro .tarefas-box {
+    background: linear-gradient(to bottom, #f7f9ff 0%, #eef3ff 50%, #e7edfb 100%) !important;
+    border: 2px solid #9db0da !important;
+}
+
+html[data-tema="claro"] #tarefas li,
+body.tema-claro #tarefas li {
+    background: #ffffff !important;
+    border: 1px solid #9db0da !important;
+    color: #1e2f53 !important;
+}
+
+html[data-tema="claro"] .gerar-btn,
+body.tema-claro .gerar-btn {
+    background-color: #b45900 !important;
+    box-shadow: 
+        0 0 6px rgba(180, 89, 0, 0.6),
+        0 0 9px rgba(180, 89, 0, 0.5) !important;
+}
+
+html[data-tema="claro"] .gerar-btn:hover,
+body.tema-claro .gerar-btn:hover {
+    box-shadow: 
+        0 0 6px rgba(180, 89, 0, 0.4),
+        0 0 13px rgba(180, 89, 0, 0.2) !important;
+}
