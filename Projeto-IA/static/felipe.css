@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap');
 
 * {
     margin: 0;
@@ -10,8 +10,15 @@ body {
     background-color: #060B1D;
     height: 100vh;
     overflow: hidden;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Inter", sans-serif;
     color: white;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
 }
 
 
@@ -34,9 +41,21 @@ body {
     height: 100px;
     width: 100px;
 }
+
+.imagem-perfil {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: 40px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
 .nome_logo {
     color: #D1D1D1;
-    font-family: "Montserrat", sans-serif;
+    font-family: "Inter", sans-serif;
     padding-bottom: 20px;
 }
 
@@ -132,7 +151,7 @@ body {
     font-size: 16px;
     padding: 14px 0;
     border-radius: 12px;
-    font-family: "Montserrat", sans-serif;
+    font-family: "Inter", sans-serif;
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -148,6 +167,14 @@ body {
     color: white;
     transform: translateX(6px);
     box-shadow: 0 0 10px rgba(255, 106, 0, 0.35);
+}
+
+.item-menu a.ativo {
+    background: #BF6301;
+    color: white;
+    box-shadow:
+        0 0 6px rgba(255, 122, 0, 0.5),
+        0 0 13px #683607;
 }
 
 .icon {
@@ -182,43 +209,39 @@ body {
     justify-content: center;
     align-items: center;
     padding: 40px;
-    
+    background-color: #020816;
 }
 
 
 #caixa-principal {
     width: 100%;
-    max-width: 900px;
-   
-    
+    max-width: 1040px;
 }
 
 #colunas {
     display: flex;
-    gap: 25px;
+    align-items: stretch;
+    gap: 20px;
 }
 
 .cartao {
-    background: rgba(6, 11, 29, 0.7);
-    border: 1px solid #472B5E;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-    background: linear-gradient(to bottom, #0c1e52 0%, #081a47 35%, #060018 100%);
-    box-shadow: 
-        0 0 3px rgba(255, 122, 0, 0.5),
-        0 0 8px #683607;
-    transition: 5s;
+    background: linear-gradient(to bottom, #102b73 0%, #081a47 35%, #020816 100%);
+    border: 1.5px solid #6c3d8f;
+    padding: 24px;
+    border-radius: 20px;
+    box-shadow:
+        0 0 6px rgba(255, 122, 0, 0.5),
+        0 0 13px #683607;
 }
 
 .principal {
-    width: 60%;
+    width: 58%;
     display: flex;
     flex-direction: column;
 }
 
 .historico {
-    width: 40%;
+    width: 42%;
 }
 
 .centralizar-conteudo {
@@ -226,44 +249,77 @@ body {
     text-align: center;
 }
 
+.cartao h2 {
+    color: #ffffff;
+    font-family: "Poppins", sans-serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.cartao p,
+.cartao label {
+    color: #d1d5db;
+    font-size: 0.92rem;
+    line-height: 1.6;
+}
+
+.cartao label {
+    width: 100%;
+    margin-bottom: 8px;
+    text-align: left;
+    font-weight: 600;
+}
+
 .grupo-tempo {
     display: flex;
     gap: 12px;
-    margin: 20px 0 25px;
+    justify-content: center;
+    margin: 22px 0 24px;
 }
 
 .botao-cinza {
     background-color: transparent;
-    color: #94a3b8;
+    color: #d1d5db;
     border: 1px solid #472B5E;
+    min-height: 40px;
     padding: 8px 18px;
     border-radius: 20px;
     cursor: pointer;
-    transition: 0.3s;
+    font-weight: 700;
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
 
 .botao-cinza.ativo {
-    background-color: rgba(255, 138, 0, 0.1);
-    color: #FF8A00;
-    border-color: #FF8A00;
+    background-color: rgba(255, 106, 0, 0.16);
+    color: #FFB37A;
+    border-color: #FF6A00;
+}
+
+.botao-cinza:hover {
+    transform: translateY(-1px);
+    border-color: #FF6A00;
 }
 
 #campo-tarefa {
     width: 100%;
-    padding: 15px;
-    background: linear-gradient(to right, #0A1435, #04091A);
+    padding: 14px 16px;
+    background: rgba(14, 25, 66, 0.9);
     color: #ffffff;
     border: 1px solid #472B5E;
-    border-radius: 8px;
-    font-size: 16px;
-    margin-top: 8px;
+    border-radius: 12px;
+    font-size: 1rem;
     margin-bottom: 30px;
     outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 
 #campo-tarefa:focus {
-    border-color: #FF8A00;
+    border-color: #FF6A00;
+    box-shadow:
+        0 0 6px rgba(255, 122, 0, 0.45),
+        0 0 11px rgba(255, 122, 0, 0.22);
 }
 
 #area-relogio {
@@ -274,10 +330,12 @@ body {
 }
 
 #relogio {
-    font-size: 90px;
+    color: #ffffff;
+    font-family: "Poppins", sans-serif;
+    font-size: 88px;
     margin: 0;
     line-height: 1;
-    font-weight: bold;
+    font-weight: 700;
     text-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
 }
 
@@ -293,31 +351,39 @@ body {
 }
 
 .botao {
-    font-size: 16px;
-    padding: 12px 25px;
-    border-radius: 8px;
+    min-height: 42px;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.92rem;
+    padding: 10px 22px;
+    border-radius: 20px;
     cursor: pointer;
-    font-weight: bold;
+    font-weight: 700;
     border: none;
-    transition: 0.3s;
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.botao:hover {
+    transform: scale(1.03);
 }
 
 .iniciar {
-    background: linear-gradient(90deg, #FF8A00, #E65C00);
+    background: #FF6A00;
     color: white;
-    box-shadow: 0 4px 15px rgba(255, 138, 0, 0.3);
+    box-shadow:
+        0 0 6px rgba(255, 122, 0, 0.8),
+        0 0 11px rgba(255, 122, 0, 0.5);
 }
 
 .pausar {
     background-color: transparent;
     color: white;
-    border: 2px solid #472B5E;
+    border: 1px solid #6c3d8f;
 }
 
 .finalizar {
-    background-color: #2D1B4D;
-    color: #D4A5FF;
-    border: 1px solid #472B5E;
+    background-color: rgba(255, 106, 0, 0.14);
+    color: #FFB37A;
+    border: 1px solid #BF6301;
 }
 
 html[data-tema="claro"] body,
@@ -404,20 +470,20 @@ body.tema-claro .botao-cinza.ativo {
 
 html[data-tema="claro"] .iniciar,
 body.tema-claro .iniciar {
-    background: linear-gradient(90deg, #b45900, #994200) !important;
+    background: #b45900 !important;
 }
 
 html[data-tema="claro"] .pausar,
 body.tema-claro .pausar {
     color: #1e2f53 !important;
-    border: 2px solid #aabce4 !important;
+    border: 1px solid #aabce4 !important;
 }
 
 html[data-tema="claro"] .finalizar,
 body.tema-claro .finalizar {
-    background-color: #e8d5ff !important;
-    color: #6b4a8f !important;
-    border: 1px solid #9db0da !important;
+    background-color: rgba(180, 89, 0, 0.12) !important;
+    color: #b45900 !important;
+    border: 1px solid #b45900 !important;
 }
 
 @media (max-width: 900px) {

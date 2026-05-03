@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap');
 
 :root {
     --bg-main: #060B1D;
@@ -19,7 +19,7 @@
 body {
     background-color: var(--bg-main);
     color: var(--text-main);
-    font-family: "Montserrat", sans-serif;
+    font-family: "Inter", sans-serif;
     min-height: 100vh;
     overflow: hidden;
 }
@@ -45,9 +45,21 @@ body {
     height: 100px;
     width: 100px;
 }
+
+.imagem-perfil {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: 40px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
 .nome_logo {
     color: #D1D1D1;
-    font-family: "Montserrat", sans-serif;
+    font-family: "Inter", sans-serif;
     padding-bottom: 20px;
 }
 .card_do_card {
@@ -138,7 +150,7 @@ body {
     font-size: 16px;
     padding: 14px 0;
     border-radius: 12px;
-    font-family: "Montserrat", sans-serif;
+    font-family: "Inter", sans-serif;
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -154,6 +166,14 @@ body {
     color: white;
     transform: translateX(6px);
     box-shadow: 
+        0 0 6px rgba(255, 122, 0, 0.5),
+        0 0 13px #683607;
+}
+
+.item-menu a.ativo {
+    background: #BF6301;
+    color: white;
+    box-shadow:
         0 0 6px rgba(255, 122, 0, 0.5),
         0 0 13px #683607;
 }
@@ -210,14 +230,14 @@ body {
     font-size: 1.4rem;
     font-weight: 700;
     color: white;
-    font-family: "Krona One", sans-serif;
+    font-family: "Poppins", sans-serif;
     margin-bottom: 4px;
 }
 
 .header-brand p {
     font-size: 0.85rem;
     color: var(--text-muted);
-    font-family: "Montserrat", sans-serif;
+    font-family: "Inter", sans-serif;
 }
 
 
@@ -252,10 +272,14 @@ body {
     max-width: 340px;
 }
 
+.support-panel .btn-secondary {
+    align-self: center;
+}
+
 .panel h2 {
     font-size: 1.2rem;
     color: white;
-    font-family: "Krona One", sans-serif;
+    font-family: "Poppins", sans-serif;
     margin-bottom: 6px;
 }
 
@@ -263,7 +287,7 @@ body {
     font-size: 0.85rem;
     color: var(--text-muted);
     margin-bottom: 24px;
-    font-family: "Montserrat", sans-serif;
+    font-family: "Inter", sans-serif;
 }
 
 
@@ -323,7 +347,7 @@ body {
     cursor: pointer;
     font-size: 13px;
     border: none;
-    font-family: "Krona One", sans-serif;
+    font-family: "Poppins", sans-serif;
     transition: 0.2s ease;
     box-shadow:
         0 0 6px rgba(255, 122, 0, 0.8),
@@ -338,14 +362,17 @@ body {
     background-color: transparent;
     color: #FF6A00;
     border: 1px solid #FF6A00;
-    padding: 10px 18px;
-    border-radius: 20px;
+    padding: 8px 14px;
+    border-radius: 16px;
     cursor: pointer;
+    font-size: 0.85rem;
     transition: 0.3s ease;
-    font-family: "Montserrat", sans-serif;
+    font-family: "Inter", sans-serif;
     font-weight: 600;
-    display: flex;
+    display: inline-flex;
     justify-content: center;
+    text-decoration: none;
+    width: fit-content;
 }
 
 .btn-secondary:hover {

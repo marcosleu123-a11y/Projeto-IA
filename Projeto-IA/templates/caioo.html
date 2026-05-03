@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vortex</title>
+    <title>VARK - Vortex</title>
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='marcos.css') }}?v=3">
+    <link rel="stylesheet" href="{{ url_for('static', filename='caioo.css') }}">
+    <script src="{{ url_for('static', filename='tema.js') }}"></script>
 </head>
 <body>
-    <div class="quadrado"></div>
-
     <div class="card_cima">
         <img class="imagem_vortexx" src="{{ url_for('static', filename='imagens/logo_transparente (1).svg') }}" alt="logo do vortex">
         <h1 class="nome_logo">Vortex AI</h1>
@@ -21,7 +21,7 @@
             <nav class="menu-lateral">
                 <ul>
                     <li class="item-menu">
-                        <a href="{{ url_for('assistente_academica') }}" class="ativo">
+                        <a href="{{ url_for('assistente_academica') }}">
                             <span class="icon"><i class="bi bi-robot"></i></span>
                             <span class="txt-link">Assistente IA</span>
                         </a>
@@ -56,7 +56,7 @@
                     </li>
 
                     <li class="item-menu">
-                        <a href="{{ url_for('vark') }}" class="btn-VARK">
+                        <a href="{{ url_for('vark') }}" class="btn-VARK ativo">
                             <span class="icon"><i class="bi bi-palette"></i></span>
                             <span class="txt-link">VARK</span>
                         </a>
@@ -65,7 +65,7 @@
                     <li class="item-menu">
                         <a href="{{ url_for('calendario') }}" class="btn-calendario">
                             <span class="icon"><i class="bi bi-calendar-event"></i></span>
-                            <span class="txt-link">Calendário</span>
+                            <span class="txt-link">Calendario</span>
                         </a>
                     </li>
 
@@ -94,25 +94,35 @@
         </div>
 
         <div class="area_principal">
-            <div class="card_chat">
-                <iframe src="{{ url_for('static', filename='imagens/logo_assistente_animada (2).html') }}" class="animacao-fundo"></iframe>
-                <div class="mensagens" id="chatMensagens"></div>
-            </div>
+            <main class="main-content vark-content">
+                <section class="panel vark-panel">
+                    <h2>VARK</h2>
+                    <p class="subtitle">Descubra como voce aprende melhor.</p>
 
-            <div class="card_pergunta">
-                <section class="campo_input">
-                    <input type="text" id="inputMensagem" placeholder="Digite sua pergunta...">
+                    <div class="vark-bloco">
+                        <p>O metodo VARK separa os estilos de aprendizagem em quatro formas principais. Ele ajuda voce a escolher tecnicas de estudo mais alinhadas com o seu jeito de absorver conteudo.</p>
+
+                        <ul class="vark-lista">
+                            <li><strong>Visual:</strong> aprende melhor com mapas mentais, cores, graficos e esquemas.</li>
+                            <li><strong>Auditivo:</strong> aprende melhor ouvindo explicacoes, podcasts, aulas e debates.</li>
+                            <li><strong>Leitura/escrita:</strong> aprende melhor com resumos, listas, textos e anotacoes.</li>
+                            <li><strong>Cinestesico:</strong> aprende melhor praticando, simulando e resolvendo exercicios.</li>
+                        </ul>
+                    </div>
                 </section>
 
-                <button class="enviar" id="botaoEnviar" type="button">
-                    <img class="aviao" src="{{ url_for('static', filename='imagens/Telegram App (1).png') }}" alt="aviao_imagem">
-                    <span class="enviar_texto">Enviar</span>
-                </button>
-            </div>
+                <section class="panel vark-panel vark-panel-link">
+                    <h2>Teste VARK</h2>
+                    <p class="subtitle">Responda ao questionario oficial.</p>
+
+                    <div class="vark-link-box">
+                        <p>Abra o teste, responda com calma e depois use o resultado para adaptar seus estudos no Vortex.</p>
+                        <a class="vark-link" href="https://vark-learn.com/questionario/" target="_blank" rel="noopener noreferrer">Abrir teste</a>
+                    </div>
+                </section>
+            </main>
         </div>
     </div>
-
-    <script src="{{ url_for('static', filename='marcos.js') }}"></script>
     {% include "_notion_widget.html" %}
 </body>
 </html>

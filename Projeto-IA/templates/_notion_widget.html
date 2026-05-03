@@ -1,0 +1,50 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='notion.css') }}">
+
+<div class="notion-widget" aria-label="Notas">
+    <div class="notion-scene">
+        <button id="menu-toggle" class="notion-main-toggle" type="button" aria-expanded="false" aria-label="Abrir menu de notas">
+            <i class="bi bi-pencil-square" aria-hidden="true"></i>
+        </button>
+
+        <div id="menu-ring" class="notion-menu-ring">
+            {% for slot in range(1, 6) %}
+                <button class="notion-orbit-btn" type="button" data-slot="{{ slot }}" aria-label="Abrir nota {{ slot }}">
+                    <span class="notion-orbit-icon"><i class="bi bi-journal-text" aria-hidden="true"></i></span>
+                    <span class="notion-orbit-label">Nota {{ slot }}</span>
+                </button>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div id="notion-backdrop" class="notion-backdrop notion-hidden"></div>
+    <section id="editor-modal" class="notion-modal notion-hidden" role="dialog" aria-modal="true" aria-labelledby="note-title">
+        <header class="notion-modal-header">
+            <input id="note-title" class="notion-title-input" type="text" maxlength="32" placeholder="Titulo da nota">
+            <button id="close-modal" class="notion-icon-close" type="button" aria-label="Fechar">
+                <i class="bi bi-x-lg" aria-hidden="true"></i>
+            </button>
+        </header>
+
+        <div class="notion-toolbar" aria-label="Formatacao">
+            <button type="button" class="notion-tool" data-command="bold" aria-label="Negrito"><b>B</b></button>
+            <button type="button" class="notion-tool" data-command="italic" aria-label="Italico"><i>I</i></button>
+            <button type="button" class="notion-tool" data-command="formatBlock" data-value="h2">H2</button>
+            <button type="button" class="notion-tool" data-command="formatBlock" data-value="p">P</button>
+        </div>
+
+        <div
+            id="editor"
+            class="notion-editor"
+            contenteditable="true"
+            spellcheck="true"
+            data-placeholder="Escreva sua anotacao aqui..."
+        ></div>
+
+        <footer class="notion-modal-footer">
+            <span id="save-status" class="notion-status"></span>
+            <button id="save-note" type="button" class="notion-save-btn">Salvar</button>
+        </footer>
+    </section>
+</div>
+
+<script src="{{ url_for('static', filename='notion.js') }}"></script>

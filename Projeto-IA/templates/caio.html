@@ -15,7 +15,7 @@
         
             <img class="imagem_vortexx"src="{{ url_for('static', filename='imagens/logo_transparente (1).svg') }}" alt="logo do vortex"> 
             <h1 class="nome_logo">Vortex AI</h1>
-            <img class="imagem-perfil" src="{{ url_for('static', filename='imagens/foto_henrique.jpeg') }}" alt="Foto do perfil" onclick="window.location.href='caio.html'">
+            <img class="imagem-perfil" src="{{ foto_perfil_url }}" alt="Foto do perfil" onclick="window.location.href='{{ url_for('perfil') }}'">
     </div>
 
     <div class="conteudo">
@@ -44,35 +44,35 @@
                     </li>
 
                     <li class="item-menu">
-                        <a href="" class="btn-flashcard">
+                        <a href="{{ url_for('flashcards') }}" class="btn-flashcard">
                             <span class="icon"><i class="bi bi-card-text"></i></span>
                             <span class="txt-link">Flashcard</span>
                         </a>
                     </li>
 
                     <li class="item-menu">
-                        <a href="" class="btn-simulado">
+                        <a href="{{ url_for('simulado') }}" class="btn-simulado">
                             <span class="icon"><i class="bi bi-journal-text"></i></span>
                             <span class="txt-link">Simulado</span>
                         </a>
                     </li>
 
                     <li class="item-menu">
-                        <a href="" class="btn-VARK">
+                        <a href="{{ url_for('vark') }}" class="btn-VARK">
                             <span class="icon"><i class="bi bi-palette"></i></span>
                             <span class="txt-link">VARK</span>
                         </a>
                     </li>
 
                     <li class="item-menu">
-                        <a href="" class="btn-calendario">
+                        <a href="{{ url_for('calendario') }}" class="btn-calendario">
                             <span class="icon"><i class="bi bi-calendar-event"></i></span>
                             <span class="txt-link">Calendário</span>
                         </a>
                     </li>
 
                     <li class="item-menu">
-                        <a href="{{ url_for('perfil') }}">
+                        <a href="{{ url_for('perfil') }}" class="ativo">
                             <span class="icon"><i class="bi bi-person-circle"></i></span>
                             <span class="txt-link">Perfil</span>
                         </a>
@@ -86,7 +86,7 @@
                     </li>
 
                     <li class="item-menu">
-                        <a href="{{ url_for('login') }}" class="btn-sair">
+                        <a href="{{ url_for('logout') }}" class="btn-sair">
                             <span class="icon"><i class="bi bi-box-arrow-left"></i></span>
                             <span class="txt-link">Sair</span>
                         </a>
@@ -105,7 +105,7 @@
 
                     <div class="user-card">
                         <div class="user-photo">
-                            <img src="{{ url_for('static', filename='imagens/foto_henrique.jpeg') }}" alt="Foto de perfil">
+                            <img src="{{ foto_perfil_url }}" alt="Foto de perfil">
                         </div>
                         <div class="user-info">
                             <h3>{{ nome_do_aluno }}</h3>
@@ -117,12 +117,17 @@
 
                 <section class="panel upload-panel">
                     <h2>Upload de foto</h2>
-                    <p class="subtitle">Apenas preview local para demo.</p>
+                    <p class="subtitle">Atualize a imagem exibida no seu perfil.</p>
 
-                    <div class="upload-container">
-                        <input type="file" id="foto" accept="image/*" class="file-input">
+                    {% if mensagem_foto %}
+                        <p class="upload-message {{ tipo_mensagem_foto }}">{{ mensagem_foto }}</p>
+                    {% endif %}
+
+                    <form class="upload-container" method="POST" enctype="multipart/form-data">
+                        <input type="file" id="foto" name="foto" accept="image/*" class="file-input">
                         <label for="foto" class="btn-upload">Selecionar foto</label>
-                    </div>
+                        <button type="submit" class="btn-upload btn-save-photo">Salvar foto</button>
+                    </form>
                 </section>
             </main>
         </div>

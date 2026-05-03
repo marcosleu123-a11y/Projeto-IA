@@ -15,6 +15,7 @@
         
             <img class="imagem_vortexx"src="{{ url_for('static', filename='imagens/logo_transparente (1).svg') }}" alt="logo do vortex"> 
             <h1 class="nome_logo">Vortex AI</h1>
+            <img class="imagem-perfil" src="{{ foto_perfil_url }}" alt="Foto do perfil" onclick="window.location.href='{{ url_for('perfil') }}'">
     </div>
 
     <div class="conteudo">
@@ -43,28 +44,28 @@
                     </li>
 
                     <li class="item-menu">
-                        <a href="" class="btn-flashcard">
+                        <a href="{{ url_for('flashcards') }}" class="btn-flashcard">
                             <span class="icon"><i class="bi bi-card-text"></i></span>
                             <span class="txt-link">Flashcard</span>
                         </a>
                     </li>
 
                     <li class="item-menu">
-                        <a href="" class="btn-simulado">
+                        <a href="{{ url_for('simulado') }}" class="btn-simulado">
                             <span class="icon"><i class="bi bi-journal-text"></i></span>
                             <span class="txt-link">Simulado</span>
                         </a>
                     </li>
 
                     <li class="item-menu">
-                        <a href="" class="btn-VARK">
+                        <a href="{{ url_for('vark') }}" class="btn-VARK">
                             <span class="icon"><i class="bi bi-palette"></i></span>
                             <span class="txt-link">VARK</span>
                         </a>
                     </li>
 
                     <li class="item-menu">
-                        <a href="" class="btn-calendario">
+                        <a href="{{ url_for('calendario') }}" class="btn-calendario">
                             <span class="icon"><i class="bi bi-calendar-event"></i></span>
                             <span class="txt-link">Calendário</span>
                         </a>
@@ -78,13 +79,13 @@
                     </li>
 
                     <li class="item-menu">
-                        <a href="{{ url_for('ajustes') }}">
+                        <a href="{{ url_for('ajustes') }}" class="ativo">
                             <span class="icon"><i class="bi bi-gear-fill"></i></span>
                             <span class="txt-link">Ajustes</span>
                         </a>
                     </li>
                     <li class="item-menu">
-                        <a href="{{ url_for('login') }}" class="btn-sair">
+                        <a href="{{ url_for('logout') }}" class="btn-sair">
                             <span class="icon"><i class="bi bi-box-arrow-left"></i></span>
                             <span class="txt-link">Sair</span>
                         </a>
@@ -147,7 +148,7 @@
 
                    
                         
-                        <button class="btn-secondary">Contato</button>
+                        <a class="btn-secondary" href="https://avagrad.unievangelica.edu.br/login/index.php" target="_blank" rel="noopener noreferrer">Contato</a>
                    
                 </section>
             </main>

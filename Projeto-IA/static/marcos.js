@@ -44,7 +44,7 @@ async function enviarMensagem() {
         });
 
         const textoDaResposta = await resposta.text();
-        novaBolhaBot.innerHTML = textoDaResposta.replace(/\n/g, "<br>");
+        novaBolhaBot.textContent = textoDaResposta;
     } catch (erro) {
         novaBolhaBot.textContent = "Erro ao conectar com o servidor.";
         console.error("Erro:", erro);

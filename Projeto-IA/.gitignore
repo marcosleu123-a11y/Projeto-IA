@@ -1,3 +1,6 @@
 __pycache__
 .env
 .venv
+flashcards.db
+chat_history.db
+server.*.log

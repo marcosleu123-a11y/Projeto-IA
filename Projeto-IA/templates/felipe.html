@@ -13,6 +13,7 @@
         
             <img class="imagem_vortexx"src="{{ url_for('static', filename='imagens/logo_transparente (1).svg') }}" alt="logo do vortex"> 
             <h1 class="nome_logo">Vortex AI</h1>
+            <img class="imagem-perfil" src="{{ foto_perfil_url }}" alt="Foto do perfil" onclick="window.location.href='{{ url_for('perfil') }}'">
     </div>
 
     <div class="conteudo">
@@ -27,7 +28,7 @@
                     </li>
 
                     <li class="item-menu">
-                        <a href="{{ url_for('modo_foco') }}">
+                        <a href="{{ url_for('modo_foco') }}" class="ativo">
                             <span class="icon"><i class="bi bi-bullseye"></i></span>
                             <span class="txt-link">Modo Foco</span>
                         </a>
@@ -41,28 +42,28 @@
                     </li>
 
                     <li class="item-menu">
-                        <a href="" class="btn-flashcard">
+                        <a href="{{ url_for('flashcards') }}" class="btn-flashcard">
                             <span class="icon"><i class="bi bi-card-text"></i></span>
                             <span class="txt-link">Flashcard</span>
                         </a>
                     </li>
 
                     <li class="item-menu">
-                        <a href="" class="btn-simulado">
+                        <a href="{{ url_for('simulado') }}" class="btn-simulado">
                             <span class="icon"><i class="bi bi-journal-text"></i></span>
                             <span class="txt-link">Simulado</span>
                         </a>
                     </li>
 
                     <li class="item-menu">
-                        <a href="" class="btn-VARK">
+                        <a href="{{ url_for('vark') }}" class="btn-VARK">
                             <span class="icon"><i class="bi bi-palette"></i></span>
                             <span class="txt-link">VARK</span>
                         </a>
                     </li>
 
                     <li class="item-menu">
-                        <a href="" class="btn-calendario">
+                        <a href="{{ url_for('calendario') }}" class="btn-calendario">
                             <span class="icon"><i class="bi bi-calendar-event"></i></span>
                             <span class="txt-link">Calendário</span>
                         </a>
@@ -82,7 +83,7 @@
                         </a>
                     </li>
                     <li class="item-menu">
-                        <a href="{{ url_for('login') }}" class="btn-sair">
+                        <a href="{{ url_for('logout') }}" class="btn-sair">
                             <span class="icon"><i class="bi bi-box-arrow-left"></i></span>
                             <span class="txt-link">Sair</span>
                         </a>
@@ -164,7 +165,7 @@
             
             var novoItem = document.createElement('p');
             novoItem.innerText = "✅ " + nomeTarefa;
-            novoItem.style.color = "#D4A5FF"; 
+            novoItem.style.color = "#FFB37A"; 
             novoItem.style.borderBottom = "1px solid #472B5E"; 
             novoItem.style.paddingBottom = "10px";
             novoItem.style.marginTop = "10px";
@@ -204,5 +205,6 @@
             atualizarTela();        
         }
     </script>
+    {% include "_notion_widget.html" %}
 </body>
 </html>

@@ -1,0 +1,213 @@
+@import url('caio.css');
+
+.calendario-content {
+    align-items: stretch;
+}
+
+.calendario-panel {
+    max-width: 760px;
+}
+
+.calendario-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 18px;
+    margin-bottom: 24px;
+}
+
+.btn-hoje,
+.calendar-nav {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: #FF6A00;
+    color: #ffffff;
+    cursor: pointer;
+    box-shadow:
+        0 0 6px rgba(255, 122, 0, 0.8),
+        0 0 11px rgba(255, 122, 0, 0.5);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-hoje {
+    gap: 8px;
+    min-height: 40px;
+    border-radius: 20px;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.85rem;
+    padding: 10px 18px;
+}
+
+.calendar-nav {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1rem;
+}
+
+.btn-hoje:hover,
+.calendar-nav:hover {
+    background-color: #d27841;
+    transform: scale(1.04);
+}
+
+.calendar {
+    border: 1.5px solid #6c3d8f;
+    border-radius: 18px;
+    background: linear-gradient(to bottom, #0E1942 0%, #18265d 48%, #020816 100%);
+    box-shadow:
+        0 0 6px rgba(255, 122, 0, 0.35),
+        0 0 13px rgba(104, 54, 7, 0.55);
+    padding: 22px;
+}
+
+.titulo {
+    display: grid;
+    grid-template-columns: 40px 1fr 40px;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 18px;
+}
+
+.titulo h3 {
+    color: #ffffff;
+    font-family: "Poppins", sans-serif;
+    font-size: 1.15rem;
+    margin: 0;
+    text-align: center;
+}
+
+.dias,
+.datas {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    text-align: center;
+}
+
+.dias {
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.dias div {
+    color: #FFB37A;
+    font-family: "Inter", sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    padding: 8px 0;
+}
+
+.datas {
+    gap: 8px;
+}
+
+.datas div,
+.datas button {
+    aspect-ratio: 1;
+    min-width: 0;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    background-color: rgba(14, 25, 66, 0.9);
+    color: #d1d5db;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Inter", sans-serif;
+    font-size: 0.95rem;
+}
+
+.datas button {
+    cursor: pointer;
+    transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+
+.datas button:hover {
+    border-color: #FF6A00;
+    background-color: rgba(255, 106, 0, 0.16);
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.datas .hoje {
+    border-color: #FF6A00;
+    background-color: #E37461;
+    color: #ffffff;
+    font-weight: 800;
+    box-shadow:
+        0 0 6px rgba(255, 122, 0, 0.6),
+        0 0 11px rgba(255, 122, 0, 0.35);
+}
+
+.datas .vazio {
+    background: transparent;
+    border-color: transparent;
+}
+
+.item-menu a.ativo {
+    background: #BF6301;
+    color: white;
+    box-shadow:
+        0 0 6px rgba(255, 122, 0, 0.5),
+        0 0 13px #683607;
+}
+
+html[data-tema="claro"] .calendar,
+body.tema-claro .calendar {
+    background: linear-gradient(to bottom, #f7f9ff 0%, #eef3ff 50%, #e7edfb 100%) !important;
+    border-color: #9db0da !important;
+}
+
+html[data-tema="claro"] .titulo h3,
+body.tema-claro .titulo h3 {
+    color: #1e2f53 !important;
+}
+
+html[data-tema="claro"] .dias div,
+body.tema-claro .dias div {
+    color: #b45900 !important;
+}
+
+html[data-tema="claro"] .datas button,
+html[data-tema="claro"] .datas div,
+body.tema-claro .datas button,
+body.tema-claro .datas div {
+    background-color: #ffffff !important;
+    border-color: #d7e0f3 !important;
+    color: #1e2f53 !important;
+}
+
+html[data-tema="claro"] .datas .vazio,
+body.tema-claro .datas .vazio {
+    background: transparent !important;
+    border-color: transparent !important;
+}
+
+html[data-tema="claro"] .datas .hoje,
+body.tema-claro .datas .hoje {
+    background-color: #b45900 !important;
+    color: #ffffff !important;
+}
+
+@media (max-width: 900px) {
+    .calendario-panel {
+        max-width: 100%;
+    }
+
+    .calendario-header {
+        flex-direction: column;
+    }
+
+    .btn-hoje {
+        width: 100%;
+    }
+
+    .calendar {
+        padding: 16px;
+    }
+
+    .datas {
+        gap: 6px;
+    }
+}

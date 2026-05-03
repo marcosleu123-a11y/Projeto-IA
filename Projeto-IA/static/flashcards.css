@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     font-family: "Inter", sans-serif;
@@ -14,22 +20,21 @@ textarea {
     font-family: inherit;
 }
 
-
 .card_cima {
     background-color: #0E1942;
     height: 100px;
     width: 100%;
-    
     position: relative;
     z-index: 5;
-    box-shadow: 
+    box-shadow:
         0 0 6px rgba(255, 122, 0, 0.5),
         0 0 13px #683607;
     display: flex;
-    justify-content:flex-start;
+    justify-content: flex-start;
     align-items: center;
     padding-top: 23px;
 }
+
 .imagem_vortexx {
     height: 100px;
     width: 100px;
@@ -52,18 +57,10 @@ textarea {
     padding-bottom: 20px;
 }
 
-.card_do_card {
-    background-color: #0E1942;
-    height: 101px;
-    width: 68px;
-}
-
-
 .layout {
     display: flex;
     height: calc(100vh - 100px);
 }
-
 
 .card_lado {
     --sidebar-collapsed: 66px;
@@ -126,8 +123,6 @@ textarea {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    padding: 0;
-    margin: 0;
 }
 
 .item-menu a {
@@ -153,22 +148,18 @@ textarea {
     padding: 14px 16px;
 }
 
-.item-menu a:hover {
-    background: #BF6301;
-    color: white;
-    transform: translateX(6px);
-    box-shadow: 0 0 10px rgba(255, 106, 0, 0.35);
-}
-
+.item-menu a:hover,
 .item-menu a.ativo {
     background: #BF6301;
     color: white;
-    box-shadow:
-        0 0 6px rgba(255, 122, 0, 0.5),
-        0 0 13px #683607;
+    box-shadow: 0 0 10px rgba(255, 106, 0, 0.35);
 }
 
-.btn-sair{
+.item-menu a:hover {
+    transform: translateX(6px);
+}
+
+.btn-sair {
     margin-top: 24px;
 }
 
@@ -197,80 +188,181 @@ textarea {
     width: auto;
 }
 
-
 .conteudo {
     flex: 1;
-    height: 900px;
+    height: 100%;
     overflow-y: auto;
+    padding: 36px 28px;
+    background: #020816;
 }
 
-.container {
-    max-width: 900px;
-    margin: auto;
-    
+.container-flashcards {
+    width: min(1040px, 100%);
+    margin: 0 auto;
 }
 
-h2 {
+.container-flashcards h2 {
     margin-bottom: 24px;
-    display: flex;
-    justify-content: center;
+    text-align: center;
+    color: #F8F8FF;
     font-family: "Poppins", sans-serif;
 }
 
-.tarefas-box {
+.box-flashcards {
     background: linear-gradient(to bottom, #102b73 0%, #081a47 35%, #020816 100%);
     border: 2px solid #472B5E;
     border-radius: 20px;
-    padding: 40px;
-    padding-bottom: 20px;
-    min-height: 350px;
-    position: relative;
-     box-shadow: 
+    padding: 30px;
+    min-height: 430px;
+    box-shadow:
         0 0 6px rgba(255, 122, 0, 0.5),
         0 0 13px #683607;
 }
 
-#tarefas {
-    list-style: none;
-    padding: 0;
+.form-flashcard {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.form-flashcard input {
+    flex: 1;
+    min-width: 0;
+    padding: 13px 14px;
+    border-radius: 12px;
+    border: 1px solid #6c3d8f;
+    outline: none;
+    color: white;
+    background: #0E1942;
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+}
+
+.form-flashcard input::placeholder {
+    color: #FFFFFF99;
+}
+
+.form-flashcard button {
+    background: #BF6301;
+    color: white;
+    border: none;
+    padding: 13px 22px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+    box-shadow:
+        0 0 6px rgba(255, 122, 0, 0.8),
+        0 0 9px rgba(179, 88, 3, 0.8);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-flashcard button:hover {
+    transform: scale(1.04);
+    box-shadow:
+        0 0 8px rgba(255, 122, 0, 0.9),
+        0 0 14px rgba(179, 88, 3, 0.8);
+}
+
+.lista-postits {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.postit {
+    width: 220px;
+    min-height: 160px;
+    background: #d8b4f8;
+    background-image:
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+    background-size: 100% 28px;
+    padding: 24px 20px 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.6;
+    color: #2e1a47;
+    position: relative;
+    transform: rotate(-2deg);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    transition: transform 0.2s ease;
+}
+
+.postit::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 14px;
+    height: 14px;
+    background: radial-gradient(circle at 30% 30%, #ffb347, #BF6301);
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+.postit::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(135deg, transparent 50%, rgba(0, 0, 0, 0.2));
+    border-bottom-right-radius: 10px;
+}
+
+.postit:nth-child(2n) {
+    transform: rotate(2deg);
+    background: #e9d5ff;
+}
+
+.postit:nth-child(3n) {
+    transform: rotate(-3deg);
+    background: #d8b4fe;
+}
+
+.postit:nth-child(4n) {
+    transform: rotate(1deg);
+}
+
+.postit:hover {
+    transform: scale(1.05) rotate(0deg);
+}
+
+.postit p {
     margin: 0;
 }
 
-#tarefas li {
-    background: #0E1942;
-    margin: 10px 0;
-    padding: 15px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    border: 1px solid #472B5E;
-}
-
-.gerar-btn {
+.delete-btn {
     position: absolute;
-    bottom: 25px;
-    right: 25px;
-    background-color: #FF6A00;
-    color: white;
+    top: 5px;
+    right: 8px;
+    background: transparent;
     border: none;
-    width: 160px;
-    height: 30px;
-    border-radius: 25px;
-    font-family: "Poppins", sans-serif;
+    color: #5a2a7a;
+    font-size: 20px;
     cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    box-shadow: 
-        0 0 6px rgba(255, 122, 0, 0.8),
-        0 0 9px rgba(179, 88, 3, 0.8),
-        0 0 15px rgba(173, 85, 3, 0.5);
+    padding: 0;
+    line-height: 1;
 }
 
-.gerar-btn:hover {
-    transform: scale(1.05);
-     box-shadow: 
-        0 0 6px rgba(255, 122, 0, 0.5),
-        0 0 13px #683607;
+.delete-btn:hover {
+    color: #b00020;
+}
+
+.estado-vazio {
+    width: 100%;
+    color: #D1D1D1;
+    font-family: "Inter", sans-serif;
+    text-align: center;
+    padding: 70px 0;
 }
 
 @media (max-width: 900px) {
@@ -319,20 +411,14 @@ h2 {
         padding-bottom: 4px;
     }
 
-    .item-menu a {
+    .item-menu a,
+    .card_lado:hover .item-menu a {
         justify-content: flex-start;
         gap: 16px;
         width: auto;
         overflow: visible;
         padding: 10px 12px;
         font-size: 14px;
-    }
-
-    .card_lado:hover .item-menu a {
-        justify-content: flex-start;
-        gap: 16px;
-        width: auto;
-        padding: 10px 12px;
     }
 
     .txt-link {
@@ -355,28 +441,24 @@ h2 {
 
     .conteudo {
         height: auto;
-        min-height: 0;
         padding: 20px 14px;
     }
 
-    .container {
+    .box-flashcards {
+        padding: 20px 16px;
+    }
+
+    .form-flashcard {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .form-flashcard button {
         width: 100%;
     }
 
-    .tarefas-box {
-        padding: 20px 16px 70px;
-    }
-
-    .gerar-btn {
-        left: 16px;
-        right: 16px;
-        bottom: 16px;
-        width: auto;
-        height: 38px;
-    }
-
-    #tarefas li {
-        align-items: flex-start;
+    .lista-postits {
+        justify-content: center;
     }
 }
 
@@ -393,19 +475,6 @@ body.tema-claro .card_lado {
     background-color: #dbe4fb !important;
 }
 
-html[data-tema="claro"] .card_lado,
-body.tema-claro .card_lado {
-    border-right: 1px solid #aabce4 !important;
-}
-
-html[data-tema="claro"] .card_lado::after,
-body.tema-claro .card_lado::after {
-    background: rgba(191, 99, 1, 0.5) !important;
-    box-shadow:
-        0 0 10px rgba(255, 122, 0, 0.45),
-        0 0 16px rgba(255, 122, 0, 0.3) !important;
-}
-
 html[data-tema="claro"] .nome_logo,
 html[data-tema="claro"] .item-menu a,
 body.tema-claro .nome_logo,
@@ -415,33 +484,18 @@ body.tema-claro .item-menu a {
 
 html[data-tema="claro"] .conteudo,
 body.tema-claro .conteudo {
-    background-color: #f3f6ff !important;
+    background: #f3f6ff !important;
 }
 
-html[data-tema="claro"] .tarefas-box,
-body.tema-claro .tarefas-box {
+html[data-tema="claro"] .box-flashcards,
+body.tema-claro .box-flashcards {
     background: linear-gradient(to bottom, #f7f9ff 0%, #eef3ff 50%, #e7edfb 100%) !important;
     border: 2px solid #9db0da !important;
 }
 
-html[data-tema="claro"] #tarefas li,
-body.tema-claro #tarefas li {
+html[data-tema="claro"] .form-flashcard input,
+body.tema-claro .form-flashcard input {
     background: #ffffff !important;
     border: 1px solid #9db0da !important;
     color: #1e2f53 !important;
-}
-
-html[data-tema="claro"] .gerar-btn,
-body.tema-claro .gerar-btn {
-    background-color: #b45900 !important;
-    box-shadow: 
-        0 0 6px rgba(180, 89, 0, 0.6),
-        0 0 9px rgba(180, 89, 0, 0.5) !important;
-}
-
-html[data-tema="claro"] .gerar-btn:hover,
-body.tema-claro .gerar-btn:hover {
-    box-shadow: 
-        0 0 6px rgba(180, 89, 0, 0.4),
-        0 0 13px rgba(180, 89, 0, 0.2) !important;
 }

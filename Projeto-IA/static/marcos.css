@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap');
 
 * {
     margin: 0;
@@ -32,9 +32,20 @@ body {
     width: 100px;
 }
 
+.imagem-perfil {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: 40px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
 .nome_logo {
     color: #D1D1D1;
-    font-family: "Montserrat", sans-serif;
+    font-family: "Inter", sans-serif;
     padding-bottom: 20px;
 }
 
@@ -118,7 +129,7 @@ body {
     font-size: 16px;
     padding: 14px 0;
     border-radius: 12px;
-    font-family: "Montserrat", sans-serif;
+    font-family: "Inter", sans-serif;
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -134,6 +145,14 @@ body {
     color: white;
     transform: translateX(6px);
     box-shadow: 0 0 10px rgba(255, 106, 0, 0.35);
+}
+
+.item-menu a.ativo {
+    background: #BF6301;
+    color: white;
+    box-shadow:
+        0 0 6px rgba(255, 122, 0, 0.5),
+        0 0 13px #683607;
 }
 
 .btn-sair {
@@ -171,8 +190,8 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 40px;
-    gap: 30px;
+    padding: 30px 40px;
+    gap: 24px;
     background-color: #020816;
 }
 
@@ -180,7 +199,8 @@ body {
     background: linear-gradient(to bottom, #102b73 0%, #081a47 35%, #020816 100%);
     width: 85%;
     max-width: 980px;
-    height: 360px;
+    height: min(460px, calc(100vh - 300px));
+    min-height: 390px;
     border-radius: 20px;
     border: 1.5px solid #6c3d8f;
     box-shadow:
@@ -221,9 +241,10 @@ body {
     max-width: 75%;
     padding: 12px 16px;
     border-radius: 16px;
-    font-family: "Montserrat", sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 14px;
     line-height: 1.4;
+    white-space: pre-wrap;
     word-break: break-word;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
 }
@@ -245,7 +266,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 20px;
+    margin-top: 0;
     height: 56px;
     width: 70%;
     max-width: 850px;
@@ -275,7 +296,7 @@ body {
     color: white;
     font-size: 14px;
     padding: 0 8px 0 0;
-    font-family: "Kanit", sans-serif;
+    font-family: "Inter", sans-serif;
     font-weight: 300;
 }
 
@@ -311,7 +332,7 @@ body {
 }
 
 .enviar_texto {
-    font-family: "Krona One", sans-serif;
+    font-family: "Poppins", sans-serif;
     font-size: 12px;
     padding-right: 10px;
     font-weight: 100;
@@ -490,7 +511,8 @@ body.tema-claro .mensagem.usuario {
 
     .card_chat {
         width: 100%;
-        height: 300px;
+        height: 360px;
+        min-height: 320px;
     }
 
     .animacao-fundo {

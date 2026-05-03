@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap');
 
 :root {
     --bg-body: #060B1D;
@@ -17,8 +17,16 @@
 
 body {
     background-color: #060B1D;
+    font-family: "Inter", sans-serif;
     min-height: 100vh;
     overflow: hidden;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
 }
 
 
@@ -54,7 +62,7 @@ body {
 
 .nome_logo {
     color: #D1D1D1;
-    font-family: "Montserrat", sans-serif;
+    font-family: "Inter", sans-serif;
     padding-bottom: 20px;
 }
 
@@ -146,7 +154,7 @@ body {
     font-size: 16px;
     padding: 14px 0;
     border-radius: 12px;
-    font-family: "Montserrat", sans-serif;
+    font-family: "Inter", sans-serif;
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -162,6 +170,14 @@ body {
     color: white;
     transform: translateX(6px);
     box-shadow: 
+        0 0 6px rgba(255, 122, 0, 0.5),
+        0 0 13px #683607;
+}
+
+.item-menu a.ativo {
+    background: #BF6301;
+    color: white;
+    box-shadow:
         0 0 6px rgba(255, 122, 0, 0.5),
         0 0 13px #683607;
 }
@@ -218,14 +234,14 @@ body {
     font-size: 1.4rem;
     font-weight: 700;
     color: white;
-    font-family: "Krona One", sans-serif;
+    font-family: "Poppins", sans-serif;
     margin-bottom: 4px;
 }
 
 .header-brand p {
     font-size: 0.85rem;
     color: #9ca3af;
-    font-family: "Montserrat", sans-serif;
+    font-family: "Inter", sans-serif;
 }
 
 .header-actions {
@@ -241,7 +257,7 @@ body {
     border-radius: 20px;
     cursor: pointer;
     font-size: 0.9rem;
-    font-family: "Montserrat", sans-serif;
+    font-family: "Inter", sans-serif;
     transition: background-color 0.2s ease;
 }
 
@@ -278,7 +294,7 @@ body {
 .panel h2 {
     font-size: 1.2rem;
     color: white;
-    font-family: "Krona One", sans-serif;
+    font-family: "Poppins", sans-serif;
     margin-bottom: 6px;
 }
 
@@ -286,7 +302,7 @@ body {
     font-size: 0.85rem;
     color: #9ca3af;
     margin-bottom: 24px;
-    font-family: "Montserrat", sans-serif;
+    font-family: "Inter", sans-serif;
 }
 
 .user-card {
@@ -323,29 +339,37 @@ body {
 .user-info h3 {
     font-size: 1.1rem;
     color: white;
-    font-family: "Montserrat", sans-serif;
+    font-family: "Inter", sans-serif;
     margin-bottom: 4px;
 }
 
 .user-info p {
     font-size: 0.85rem;
     color: #9ca3af;
-    font-family: "Montserrat", sans-serif;
+    font-family: "Inter", sans-serif;
 }
 
 .file-input {
     display: none;
 }
 
+.upload-container {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
 .btn-upload {
     background-color: #FF6A00;
     color: white;
+    border: none;
     padding: 10px 22px;
     border-radius: 20px;
     cursor: pointer;
     font-size: 0.9rem;
     display: inline-block;
-    font-family: "Krona One", sans-serif;
+    font-family: "Poppins", sans-serif;
     transition: 0.2s ease;
     box-shadow:
         0 0 6px rgba(255, 122, 0, 0.8),
@@ -354,6 +378,33 @@ body {
 
 .btn-upload:hover {
     transform: scale(1.04);
+}
+
+.btn-save-photo {
+    background-color: transparent;
+    border: 1px solid #FF6A00;
+    color: #FFB37A;
+}
+
+.upload-message {
+    border-radius: 10px;
+    font-family: "Inter", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 14px;
+    padding: 10px 12px;
+}
+
+.upload-message.sucesso {
+    background: rgba(34, 197, 94, 0.14);
+    border: 1px solid rgba(34, 197, 94, 0.45);
+    color: #bbf7d0;
+}
+
+.upload-message.erro {
+    background: rgba(239, 68, 68, 0.14);
+    border: 1px solid rgba(239, 68, 68, 0.45);
+    color: #fecaca;
 }
 
 html[data-tema="claro"] body,
@@ -431,9 +482,30 @@ body.tema-claro .btn-upload {
         0 0 11px rgba(180, 89, 0, 0.4) !important;
 }
 
+html[data-tema="claro"] .btn-save-photo,
+body.tema-claro .btn-save-photo {
+    background-color: transparent !important;
+    border: 1px solid #b45900 !important;
+    color: #b45900 !important;
+}
+
 html[data-tema="claro"] .btn-upload:hover,
 body.tema-claro .btn-upload:hover {
     background-color: #8a4200 !important;
+}
+
+html[data-tema="claro"] .upload-message.sucesso,
+body.tema-claro .upload-message.sucesso {
+    background: rgba(22, 163, 74, 0.12) !important;
+    border-color: rgba(22, 163, 74, 0.35) !important;
+    color: #166534 !important;
+}
+
+html[data-tema="claro"] .upload-message.erro,
+body.tema-claro .upload-message.erro {
+    background: rgba(220, 38, 38, 0.12) !important;
+    border-color: rgba(220, 38, 38, 0.35) !important;
+    color: #991b1b !important;
 }
 
 @media (max-width: 900px) {
