@@ -2,6 +2,7 @@ import json
 import os
 import random
 import sqlite3
+import tempfile
 from ollama import chat
 
 import mysql.connector
@@ -62,11 +63,17 @@ Como responder:
 
 app = Flask(__name__)
 app.secret_key = os.getenv("FLASK_SECRET_KEY", "chave-dev")
-FLASHCARDS_DB = os.path.join(app.root_path, "flashcards.db")
-NOTION_DB = os.path.join(app.root_path, "notion_notes.db")
-CHAT_HISTORY_DB = os.path.join(app.root_path, "chat_history.db")
+IS_VERCEL = os.getenv("VERCEL") == "1"
+DATA_DIR = os.getenv("APP_DATA_DIR") or (tempfile.gettempdir() if IS_VERCEL else app.root_path)
+FLASHCARDS_DB = os.path.join(DATA_DIR, "flashcards.db")
+NOTION_DB = os.path.join(DATA_DIR, "notion_notes.db")
+CHAT_HISTORY_DB = os.path.join(DATA_DIR, "chat_history.db")
 NOTION_NOTE_COUNT = 5
-PROFILE_UPLOAD_DIR = os.path.join(app.root_path, "static", "uploads", "perfil")
+PROFILE_UPLOAD_DIR = os.path.join(
+    DATA_DIR if IS_VERCEL else os.path.join(app.root_path, "static"),
+    "uploads",
+    "perfil",
+)
 
 
 def extensao_permitida(nome_arquivo):
@@ -79,9 +86,12 @@ def foto_perfil_filename(usuario_id):
 
     usuario_seguro = secure_filename(str(usuario_id))
     for extensao in EXTENSOES_FOTO_PERFIL:
-        caminho_relativo = f"uploads/perfil/{usuario_seguro}.{extensao}"
-        caminho_absoluto = os.path.join(app.root_path, "static", caminho_relativo)
-        if os.path.exists(caminho_absoluto):
+        nome_arquivo = f"{usuario_seguro}.{extensao}"
+        caminho_relativo = f"uploads/perfil/{nome_arquivo}"
+        caminho_upload = os.path.join(PROFILE_UPLOAD_DIR, nome_arquivo)
+        caminho_static = os.path.join(app.root_path, "static", caminho_relativo)
+
+        if os.path.exists(caminho_upload) or os.path.exists(caminho_static):
             return caminho_relativo
 
     return "imagens/foto_henrique.jpeg"
@@ -90,6 +100,19 @@ def foto_perfil_filename(usuario_id):
 @app.context_processor
 def injetar_foto_perfil():
     filename = foto_perfil_filename(session.get("usuario_logado"))
+
+    if filename.startswith("uploads/perfil/"):
+        nome_arquivo = os.path.basename(filename)
+        caminho_upload = os.path.join(PROFILE_UPLOAD_DIR, nome_arquivo)
+
+        if os.path.exists(caminho_upload):
+            versao = int(os.path.getmtime(caminho_upload))
+            return {
+                "foto_perfil_url": url_for(
+                    "perfil_upload", filename=nome_arquivo, v=versao
+                )
+            }
+
     caminho_absoluto = os.path.join(app.root_path, "static", filename)
     versao = int(os.path.getmtime(caminho_absoluto)) if os.path.exists(caminho_absoluto) else None
     return {"foto_perfil_url": url_for("static", filename=filename, v=versao)}
@@ -348,6 +371,11 @@ def index():
 def imagens(filename):
     imagens_dir = os.path.abspath(os.path.join(app.root_path, "..", "imagens"))
     return send_from_directory(imagens_dir, filename)
+
+
+@app.route("/uploads/perfil/<path:filename>")
+def perfil_upload(filename):
+    return send_from_directory(PROFILE_UPLOAD_DIR, secure_filename(filename))
 
 
 @app.route("/login", methods=["GET", "POST"])
