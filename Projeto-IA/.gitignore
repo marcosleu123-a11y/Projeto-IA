@@ -1,0 +1,12 @@
+__pycache__
+.env
+.venv
+flashcards.db
+chat_history.db
+server.*.log
+
+.env
+
+__pycache__/
+*.db
+*.log

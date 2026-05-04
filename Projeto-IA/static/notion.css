@@ -1,0 +1,293 @@
+.notion-widget {
+    --notion-orange: #ff8a00;
+    --notion-orange-soft: #ffbd72;
+    --notion-blue: #0e2458;
+    --notion-panel: #081a47;
+    --notion-text: #eef4ff;
+    color: var(--notion-text);
+    font-family: "Inter", sans-serif;
+}
+
+.notion-widget *,
+.notion-widget *::before,
+.notion-widget *::after {
+    box-sizing: border-box;
+}
+
+.notion-scene {
+    position: fixed;
+    right: -202px;
+    top: 50%;
+    width: 460px;
+    height: 460px;
+    transform: translateY(-50%);
+    z-index: 24;
+    pointer-events: none;
+}
+
+.notion-main-toggle {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 58px;
+    height: 58px;
+    border: 1px solid rgba(255, 138, 0, 0.9);
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 138, 0, 0.38), rgba(12, 31, 79, 0.94));
+    color: #ffd7a8;
+    cursor: pointer;
+    box-shadow:
+        0 0 18px rgba(255, 138, 0, 0.45),
+        0 0 26px rgba(55, 214, 255, 0.16);
+    transform: translate(-50%, -50%);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    pointer-events: auto;
+}
+
+.notion-main-toggle i {
+    font-size: 23px;
+}
+
+.notion-main-toggle:hover {
+    transform: translate(-50%, -50%) scale(1.05);
+    box-shadow:
+        0 0 22px rgba(255, 138, 0, 0.6),
+        0 0 30px rgba(55, 214, 255, 0.22);
+}
+
+.notion-main-toggle.open {
+    transform: translate(-50%, -50%) rotate(12deg);
+}
+
+.notion-menu-ring {
+    position: absolute;
+    inset: 0;
+}
+
+.notion-orbit-btn {
+    --x: 0px;
+    --y: 0px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    border: 1px solid rgba(255, 138, 0, 0.62);
+    border-radius: 999px;
+    background: rgba(16, 43, 97, 0.88);
+    color: var(--notion-orange-soft);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 118px;
+    height: 42px;
+    padding: 7px 14px;
+    cursor: pointer;
+    transform: translate(-50%, -50%) scale(0.2);
+    opacity: 0;
+    pointer-events: none;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+    transition:
+        transform 0.45s cubic-bezier(0.2, 0.85, 0.22, 1),
+        opacity 0.3s ease,
+        box-shadow 0.25s ease;
+}
+
+.notion-orbit-icon {
+    width: 25px;
+    height: 25px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: linear-gradient(160deg, #ff8a00, #ffb347);
+    color: #fff;
+    font-size: 13px;
+    flex: 0 0 auto;
+}
+
+.notion-orbit-label {
+    max-width: 130px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.notion-menu-ring.open .notion-orbit-btn {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(calc(-50% + var(--x)), calc(-50% + var(--y))) scale(1);
+}
+
+.notion-orbit-btn:hover {
+    box-shadow:
+        0 0 14px rgba(255, 138, 0, 0.38),
+        0 0 18px rgba(55, 214, 255, 0.22);
+}
+
+.notion-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(3, 10, 20, 0.72);
+    backdrop-filter: blur(2px);
+    z-index: 68;
+}
+
+.notion-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: min(800px, 92vw);
+    min-height: 440px;
+    max-height: 86vh;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(170deg, #0c2253, var(--notion-panel));
+    border: 1px solid rgba(255, 138, 0, 0.45);
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    z-index: 72;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+    overflow: hidden;
+}
+
+.notion-modal-header,
+.notion-modal-footer {
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.notion-modal-header {
+    border-bottom: 1px solid rgba(255, 138, 0, 0.35);
+}
+
+.notion-title-input {
+    width: 100%;
+    max-width: 420px;
+    border: 1px solid rgba(255, 138, 0, 0.45);
+    border-radius: 9px;
+    background: #102b61;
+    color: var(--notion-text);
+    padding: 9px 11px;
+    font-size: 18px;
+    font-weight: 700;
+    outline: none;
+}
+
+.notion-title-input::placeholder {
+    color: #94a8c7;
+}
+
+.notion-icon-close {
+    border: 1px solid rgba(255, 138, 0, 0.45);
+    color: var(--notion-orange-soft);
+    background: transparent;
+    border-radius: 9px;
+    width: 38px;
+    height: 38px;
+    cursor: pointer;
+    flex: 0 0 auto;
+}
+
+.notion-toolbar {
+    padding: 10px 16px;
+    border-bottom: 1px solid rgba(255, 138, 0, 0.3);
+    display: flex;
+    gap: 8px;
+}
+
+.notion-tool {
+    min-width: 38px;
+    height: 36px;
+    border: 1px solid rgba(255, 138, 0, 0.35);
+    border-radius: 8px;
+    background: #10305f;
+    color: var(--notion-text);
+    padding: 8px;
+    cursor: pointer;
+}
+
+.notion-editor {
+    flex: 1;
+    min-height: 250px;
+    padding: 16px;
+    outline: none;
+    overflow-y: auto;
+    line-height: 1.5;
+    font-size: 15px;
+}
+
+.notion-editor:empty::before {
+    content: attr(data-placeholder);
+    color: #8ba3c1;
+}
+
+.notion-save-btn {
+    border: none;
+    border-radius: 9px;
+    padding: 10px 16px;
+    color: #fff;
+    cursor: pointer;
+    background: linear-gradient(145deg, #ff8a00, #ffb347);
+    font-weight: 700;
+}
+
+.notion-status {
+    color: #9cb9d8;
+    font-size: 14px;
+}
+
+.notion-hidden {
+    display: none;
+}
+
+html[data-tema="claro"] .notion-modal,
+body.tema-claro .notion-modal {
+    background: linear-gradient(170deg, #f7f9ff, #e7edfb);
+    color: #1e2f53;
+}
+
+html[data-tema="claro"] .notion-title-input,
+html[data-tema="claro"] .notion-tool,
+body.tema-claro .notion-title-input,
+body.tema-claro .notion-tool {
+    background: #ffffff;
+    color: #1e2f53;
+}
+
+@media (max-width: 900px) {
+    .notion-scene {
+        right: -135px;
+        top: auto;
+        bottom: -110px;
+        width: 340px;
+        height: 340px;
+        transform: none;
+    }
+
+    .notion-main-toggle {
+        width: 52px;
+        height: 52px;
+    }
+
+    .notion-main-toggle i {
+        font-size: 21px;
+    }
+
+    .notion-orbit-btn {
+        min-width: 104px;
+        height: 38px;
+        padding: 6px 10px;
+    }
+
+    .notion-orbit-label {
+        max-width: 104px;
+        font-size: 13px;
+    }
+
+    .notion-modal {
+        min-height: 420px;
+    }
+}

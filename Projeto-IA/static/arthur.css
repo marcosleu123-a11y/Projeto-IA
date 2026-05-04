@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap');
+
+body{
+    margin:0px;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#060B1D;
+    font-family: "Inter", sans-serif;
+    position: static;
+}
+
+input,
+select,
+textarea {
+    font-family: inherit;
+}
+
+
+.login-container{
+    width:min(500px, 92vw);
+    align-self:center;
+    padding: 25px;
+    padding-top: 0px;
+    margin-top: 0;
+    transform: none;
+    background: linear-gradient(to bottom, #0c2568 0%, #081a47 35%, #0d0216 100%);
+    border-radius:14px;
+    color:white;
+    position: relative;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    border: 1.5px solid #6c3d8f;
+    box-shadow: 
+        0 0 6px rgba(255, 122, 0, 0.5),
+        0 0 13px #683607;
+    
+
+}
+
+
+.login-container h2{
+    margin-bottom:0px;
+    position: static;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-family: "Poppins", sans-serif;
+}
+
+
+.logo{
+    display:flex;
+    justify-content:center;
+    padding-left: 100%;
+    transform: translateX(-50%);
+    position: relative;
+    width: 100px;
+    height: 100px;
+   
+}
+
+
+.subtitle{
+    font-size:20px;
+    color: white;
+    position: relative;
+    margin-top: 0px;
+}
+
+.mensagem {
+    padding: 10px 12px;
+    border-radius: 8px;
+    margin: 12px 0;
+    font-size: 14px;
+    text-align: left;
+}
+
+.mensagem.erro {
+    background: rgba(229, 91, 67, 0.15);
+    border: 1px solid rgba(229, 91, 67, 0.7);
+    color: #ffd2cc;
+}
+
+.mensagem.sucesso {
+    background: rgba(77, 186, 117, 0.15);
+    border: 1px solid rgba(77, 186, 117, 0.75);
+    color: #d8ffe4;
+}
+
+
+form{
+    display:flex;
+    flex-direction:column;
+    position: relative;
+}
+
+input{
+    margin-bottom:14px;
+    padding:10px;
+    border-radius:8px;
+    border: 1.5px solid #6c3d8f;
+    box-shadow: 
+        0 0 6px rgba(255, 122, 0, 0.5),
+        0 0 13px #683607;
+    background:#120349;
+    color:white;
+    position: relative;
+}
+
+
+.options{
+    display:flex;
+    justify-content:space-between;
+    position: relative;
+}
+
+
+.options .checkbox{
+    margin-bottom:14px;
+    color:white;
+    position: relative;
+    font-size:14px;
+}
+
+
+.forgot{
+    color: #e55b43;
+    text-decoration:none;
+    position: relative;
+    text-decoration: none;
+    font-size:14px;
+}
+.forgot:hover{
+    color:#fbac5d;
+    text-decoration:underline;
+    position: relative;
+}
+button{
+    padding:12px;
+    width:100%;
+    border:none;
+    border-radius:8px;
+    background:#e4681a;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+    border: 0.5px solid transparent;
+    position: relative;
+    font-size: 16px;
+    box-shadow: 
+        0 0 6px rgba(255, 122, 0, 0.5),
+        0 0 13px #683607;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+button:hover{
+    background:#d27841;
+    border:0.5px solid white;
+    transition: 0.1s ease-in-out;
+    position: relative;
+    
+}
+
+
+.register{
+    margin-top:15px;
+    font-size:14px;
+    position: relative;
+}
+
+.register a{
+    color:#e55b43;
+    text-decoration:none;
+    position: relative;
+}
+
+.register a:hover{
+    color:#fbac5d;
+    text-decoration:underline;
+    position: relative;
+}
+.animacao_ {
+    border: none;
+}
+
+.matricula {
+    padding-bottom: 10px;
+}
+.senha {
+    padding-bottom: 10px;
+}
+
+@media (max-width: 600px) {
+    .login-container {
+        padding: 20px 16px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+    }
+
+    .options {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .logo {
+        width: 84px;
+        height: 84px;
+    }
+}

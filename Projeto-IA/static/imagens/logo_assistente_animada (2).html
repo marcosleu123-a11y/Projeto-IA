@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Logo Assistente IA Animada</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body {
+      display: grid;
+      place-items: center;
+      background: transparent;
+      overflow: hidden;
+      font-family: Inter, sans-serif;
+    }
+
+    .wrap {
+      width: min(70vmin, 460px);
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      position: relative;
+    }
+
+    /* halos sutis mantidos; remova este bloco inteiro se quiser 100% sem brilho ao redor */
+    .wrap::before,
+    .wrap::after {
+      content: "";
+      position: absolute;
+      inset: 12%;
+      border-radius: 50%;
+      filter: blur(36px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .wrap::before {
+      background: radial-gradient(circle, rgba(0,224,255,.16) 0%, rgba(0,224,255,.06) 35%, transparent 70%);
+      transform: translate(-16px, -12px);
+      animation: auraC 5.6s ease-in-out infinite alternate;
+    }
+
+    .wrap::after {
+      background: radial-gradient(circle, rgba(255,106,26,.16) 0%, rgba(255,106,26,.06) 35%, transparent 70%);
+      transform: translate(16px, 12px);
+      animation: auraO 6.3s ease-in-out infinite alternate;
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+      z-index: 1;
+    }
+
+    .system {
+      transform-origin: 200px 200px;
+      animation: systemFloat 7.5s ease-in-out infinite, wholeOpacityPulse 7s ease-in-out infinite;
+    }
+
+    .global-rotation {
+      transform-origin: 200px 200px;
+      animation: rotateWhole 24s linear infinite;
+    }
+
+    .orbitA,
+    .orbitB {
+      transform-origin: 200px 200px;
+    }
+
+    .orbitA { animation: orbitSpinA 11s linear infinite; }
+    .orbitB { animation: orbitSpinB 8.7s linear infinite reverse; }
+
+    .petal {
+      transform-origin: 200px 200px;
+      transform-box: fill-box;
+    }
+
+    .petal-cyan {
+      animation:
+        petalCDrift 5.1s cubic-bezier(.55,.05,.35,1) infinite,
+        petalCBreath 3.7s ease-in-out infinite;
+    }
+
+    .petal-orange {
+      animation:
+        petalODrift 6.4s cubic-bezier(.45,.08,.3,1) infinite,
+        petalOBreath 4.4s ease-in-out infinite .5s;
+    }
+
+    .petal-mix {
+      animation:
+        petalMDrift 4.8s cubic-bezier(.6,.02,.32,1) infinite,
+        petalMBreath 3.9s ease-in-out infinite 1s;
+    }
+
+    .tip,
+    .tip-halo {
+      transform-origin: 200px 200px;
+    }
+
+    .tip-top { animation: tipTopMove 5.1s cubic-bezier(.55,.05,.35,1) infinite; }
+    .tip-right { animation: tipRightMove 6.4s cubic-bezier(.45,.08,.3,1) infinite; }
+    .tip-left { animation: tipLeftMove 4.8s cubic-bezier(.6,.02,.32,1) infinite; }
+
+    .core-halo {
+      transform-origin: 200px 200px;
+      animation: coreHaloPulse 3.8s ease-in-out infinite;
+    }
+
+    .core-ring {
+      transform-origin: 200px 200px;
+      animation: coreRingPulse 3s ease-in-out infinite;
+    }
+
+    .core-dot {
+      transform-origin: 200px 200px;
+      animation: coreDotPulse 2.6s ease-in-out infinite;
+    }
+
+    .spark {
+      transform-origin: 200px 200px;
+      opacity: .9;
+    }
+
+    .spark.s1 { animation: sparkOrbit1 4.7s linear infinite; }
+    .spark.s2 { animation: sparkOrbit2 6.2s linear infinite reverse; }
+    .spark.s3 { animation: sparkOrbit3 5.4s linear infinite; }
+
+    @keyframes rotateWhole {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes orbitSpinA {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes orbitSpinB {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes systemFloat {
+      0%, 100% { transform: translateY(0px) scale(1); }
+      50% { transform: translateY(-6px) scale(1.008); }
+    }
+
+    @keyframes wholeOpacityPulse {
+      0%, 100% { opacity: 0.15; }
+      50% { opacity: 0.70; }
+      50% { transform: translateY(-6px) scale(1.008); }
+    }
+
+    @keyframes auraC {
+      from { transform: translate(-18px, -14px) scale(1); opacity: .9; }
+      to { transform: translate(-8px, -4px) scale(1.1); opacity: 1; }
+    }
+
+    @keyframes auraO {
+      from { transform: translate(18px, 14px) scale(1); opacity: .9; }
+      to { transform: translate(8px, 4px) scale(1.11); opacity: 1; }
+    }
+
+    @keyframes petalCDrift {
+      0%,100% { transform: rotate(0deg) translate(0,0); }
+      20% { transform: rotate(-3deg) translate(-2px,-5px); }
+      45% { transform: rotate(2.4deg) translate(1px,2px); }
+      70% { transform: rotate(-1.8deg) translate(-1px,-2px); }
+    }
+
+    @keyframes petalCBreath {
+      0%,100% { opacity: 1; filter: drop-shadow(0 0 8px #00E0FF); }
+      50% { opacity: .78; filter: drop-shadow(0 0 18px #00E0FF); }
+    }
+
+    @keyframes petalODrift {
+      0%,100% { transform: rotate(0deg) translate(0,0); }
+      18% { transform: rotate(2.2deg) translate(4px,2px); }
+      46% { transform: rotate(-3.5deg) translate(-2px,3px); }
+      72% { transform: rotate(1.6deg) translate(2px,-1px); }
+    }
+
+    @keyframes petalOBreath {
+      0%,100% { opacity: 1; filter: drop-shadow(0 0 8px #FF6A1A); }
+      50% { opacity: .74; filter: drop-shadow(0 0 18px #FF6A1A); }
+    }
+
+    @keyframes petalMDrift {
+      0%,100% { transform: rotate(0deg) translate(0,0); }
+      22% { transform: rotate(3.4deg) translate(-3px,2px); }
+      48% { transform: rotate(-2.1deg) translate(3px,-2px); }
+      76% { transform: rotate(1.2deg) translate(-1px,1px); }
+    }
+
+    @keyframes petalMBreath {
+      0%,100% { opacity: .92; filter: drop-shadow(0 0 6px rgba(0,224,255,.7)); }
+      50% { opacity: .7; filter: drop-shadow(0 0 16px rgba(255,106,26,.65)); }
+    }
+
+    @keyframes tipTopMove {
+      0%,100% { transform: rotate(0deg) translate(0,0) scale(1); }
+      20% { transform: rotate(-3deg) translate(-2px,-5px) scale(.96); }
+      45% { transform: rotate(2.4deg) translate(1px,2px) scale(1.05); }
+      70% { transform: rotate(-1.8deg) translate(-1px,-2px) scale(.98); }
+    }
+
+    @keyframes tipRightMove {
+      0%,100% { transform: rotate(0deg) translate(0,0) scale(1); }
+      18% { transform: rotate(2.2deg) translate(4px,2px) scale(1.04); }
+      46% { transform: rotate(-3.5deg) translate(-2px,3px) scale(.95); }
+      72% { transform: rotate(1.6deg) translate(2px,-1px) scale(1.02); }
+    }
+
+    @keyframes tipLeftMove {
+      0%,100% { transform: rotate(0deg) translate(0,0) scale(1); }
+      22% { transform: rotate(3.4deg) translate(-3px,2px) scale(1.03); }
+      48% { transform: rotate(-2.1deg) translate(3px,-2px) scale(.95); }
+      76% { transform: rotate(1.2deg) translate(-1px,1px) scale(1.01); }
+    }
+
+    @keyframes coreHaloPulse {
+      0%,100% { transform: scale(1); opacity: .14; }
+      50% { transform: scale(1.55); opacity: .24; }
+    }
+
+    @keyframes coreRingPulse {
+      0%,100% { transform: scale(1); opacity: .95; }
+      50% { transform: scale(1.18); opacity: .6; }
+    }
+
+    @keyframes coreDotPulse {
+      0%,100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.28); opacity: .84; }
+    }
+
+    @keyframes sparkOrbit1 {
+      from { transform: rotate(0deg) translateX(36px) rotate(0deg); }
+      to { transform: rotate(360deg) translateX(36px) rotate(-360deg); }
+    }
+
+    @keyframes sparkOrbit2 {
+      from { transform: rotate(120deg) translateX(28px) rotate(0deg); }
+      to { transform: rotate(480deg) translateX(28px) rotate(-360deg); }
+    }
+
+    @keyframes sparkOrbit3 {
+      from { transform: rotate(240deg) translateX(42px) rotate(0deg); }
+      to { transform: rotate(600deg) translateX(42px) rotate(-360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" aria-label="Logo animada do assistente de IA">
+      <defs>
+        <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#00E0FF"/>
+          <stop offset="100%" stop-color="#FF6A1A"/>
+        </linearGradient>
+        <linearGradient id="petal3grad" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#00E0FF" stop-opacity="0.8"/>
+          <stop offset="100%" stop-color="#FF6A1A" stop-opacity="0.8"/>
+        </linearGradient>
+        <radialGradient id="coreDotGrad" cx="35%" cy="35%" r="65%">
+          <stop offset="0%" stop-color="#ffffff"/>
+          <stop offset="45%" stop-color="#00E0FF"/>
+          <stop offset="100%" stop-color="#006A99"/>
+        </radialGradient>
+
+        <filter id="glowC" x="-60%" y="-60%" width="220%" height="220%">
+          <feGaussianBlur stdDeviation="5" result="b"/>
+          <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <filter id="glowO" x="-60%" y="-60%" width="220%" height="220%">
+          <feGaussianBlur stdDeviation="5" result="b"/>
+          <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <filter id="glowTip" x="-80%" y="-80%" width="260%" height="260%">
+          <feGaussianBlur stdDeviation="7" result="b"/>
+          <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <filter id="coreGlowF" x="-100%" y="-100%" width="300%" height="300%">
+          <feGaussianBlur stdDeviation="9" result="b"/>
+          <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+      </defs>
+
+      <g class="system">
+        <g class="global-rotation">
+          <circle class="orbitA" cx="200" cy="200" r="155" fill="none" stroke="#00E0FF" stroke-width="1" stroke-dasharray="3 18" opacity="0.35"/>
+          <circle class="orbitB" cx="200" cy="200" r="155" fill="none" stroke="#FF6A1A" stroke-width="1" stroke-dasharray="3 18" stroke-dashoffset="10.5" opacity="0.35"/>
+        </g>
+
+        <g class="petal petal-cyan">
+          <path d="M200 200 C200 200,155 170,148 130 C141 90,170 68,200 68 C200 68,200 68,200 200"
+            fill="none" stroke="#00E0FF" stroke-width="28" stroke-linecap="round" opacity="0.12" filter="url(#glowC)"/>
+          <path d="M200 200 C200 200,155 170,148 130 C141 90,170 68,200 68 C200 68,200 68,200 200"
+            fill="none" stroke="#00E0FF" stroke-width="18" stroke-linecap="round" opacity="0.25" filter="url(#glowC)"/>
+          <path d="M200 200 C200 200,155 170,148 130 C141 90,170 68,200 68 C200 68,200 68,200 200"
+            fill="none" stroke="#00E0FF" stroke-width="14" stroke-linecap="round" opacity="1" filter="url(#glowC)"/>
+        </g>
+
+        <g class="petal petal-orange">
+          <path d="M200 200 C200 200,250 195,278 222 C306 249,300 284,277 308 C277 308,277 308,200 200"
+            fill="none" stroke="#FF6A1A" stroke-width="28" stroke-linecap="round" opacity="0.12" filter="url(#glowO)"/>
+          <path d="M200 200 C200 200,250 195,278 222 C306 249,300 284,277 308 C277 308,277 308,200 200"
+            fill="none" stroke="#FF6A1A" stroke-width="18" stroke-linecap="round" opacity="0.25" filter="url(#glowO)"/>
+          <path d="M200 200 C200 200,250 195,278 222 C306 249,300 284,277 308 C277 308,277 308,200 200"
+            fill="none" stroke="#FF6A1A" stroke-width="14" stroke-linecap="round" opacity="1" filter="url(#glowO)"/>
+        </g>
+
+        <g class="petal petal-mix">
+          <path d="M200 200 C200 200,155 230,122 222 C89 214,75 181,86 152 C86 152,86 152,200 200"
+            fill="none" stroke="url(#g1)" stroke-width="28" stroke-linecap="round" opacity="0.08"/>
+          <path d="M200 200 C200 200,155 230,122 222 C89 214,75 181,86 152 C86 152,86 152,200 200"
+            fill="none" stroke="url(#petal3grad)" stroke-width="18" stroke-linecap="round" opacity="0.18"/>
+          <path d="M200 200 C200 200,155 230,122 222 C89 214,75 181,86 152 C86 152,86 152,200 200"
+            fill="none" stroke="url(#petal3grad)" stroke-width="14" stroke-linecap="round" opacity="0.9"/>
+        </g>
+
+        <g class="tip-halo tip-top">
+          <circle cx="200" cy="68" r="18" fill="#00E0FF" opacity="0.2" filter="url(#glowTip)"/>
+        </g>
+        <g class="tip-halo tip-right">
+          <circle cx="277" cy="308" r="18" fill="#FF6A1A" opacity="0.2" filter="url(#glowTip)"/>
+        </g>
+        <g class="tip-halo tip-left">
+          <circle cx="86" cy="152" r="14" fill="#00E0FF" opacity="0.12" filter="url(#glowTip)"/>
+        </g>
+
+        <g class="tip tip-top">
+          <circle cx="200" cy="68" r="9" fill="#00E0FF" opacity="0.95" filter="url(#glowC)"/>
+          <circle cx="200" cy="68" r="4" fill="white" opacity="0.95"/>
+        </g>
+
+        <g class="tip tip-right">
+          <circle cx="277" cy="308" r="9" fill="#FF6A1A" opacity="0.95" filter="url(#glowO)"/>
+          <circle cx="277" cy="308" r="4" fill="white" opacity="0.95"/>
+        </g>
+
+        <g class="tip tip-left">
+          <circle cx="86" cy="152" r="7" fill="url(#g1)" opacity="0.85" filter="url(#glowC)"/>
+          <circle cx="86" cy="152" r="3" fill="white" opacity="0.85"/>
+        </g>
+
+        <g class="core-halo">
+          <circle cx="200" cy="200" r="26" fill="url(#g1)" opacity="0.1" filter="url(#coreGlowF)"/>
+        </g>
+
+        <g class="core-ring">
+          <circle cx="200" cy="200" r="17" fill="none" stroke="url(#g1)" stroke-width="2.2" opacity="0.95" filter="url(#glowC)"/>
+        </g>
+
+        <g class="spark s1"><circle cx="200" cy="200" r="2.6" fill="#00E0FF" /></g>
+        <g class="spark s2"><circle cx="200" cy="200" r="2.4" fill="#FF6A1A" /></g>
+        <g class="spark s3"><circle cx="200" cy="200" r="2.1" fill="#ffffff" opacity=".9"/></g>
+
+        <g class="core-dot">
+          <circle cx="200" cy="200" r="9" fill="url(#coreDotGrad)" filter="url(#coreGlowF)"/>
+          <circle cx="196" cy="196" r="3" fill="white" opacity="0.75"/>
+        </g>
+      </g>
+    </svg>
+  </div>
+</body>
+</html>

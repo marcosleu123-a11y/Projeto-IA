@@ -1,0 +1,122 @@
+@import url('caio.css');
+
+.vark-content {
+    align-items: stretch;
+}
+
+.vark-panel {
+    max-width: 520px;
+}
+
+.vark-bloco p,
+.vark-link-box p {
+    font-family: "Inter", sans-serif;
+    font-size: 0.92rem;
+    color: #d1d5db;
+    line-height: 1.7;
+}
+
+.vark-lista {
+    list-style: none;
+    display: grid;
+    gap: 12px;
+    margin: 22px 0 0;
+    padding: 0;
+}
+
+.vark-lista li {
+    background-color: rgba(14, 25, 66, 0.9);
+    border: 1px solid #472B5E;
+    border-radius: 12px;
+    padding: 14px 16px;
+    color: #d1d5db;
+    font-family: "Inter", sans-serif;
+    line-height: 1.55;
+    box-shadow:
+        0 0 6px rgba(255, 122, 0, 0.22),
+        0 0 13px rgba(104, 54, 7, 0.14);
+}
+
+.vark-lista strong {
+    color: #ffffff;
+}
+
+.vark-panel-link .vark-link-box {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.vark-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    min-height: 40px;
+    padding: 10px 22px;
+    border-radius: 20px;
+    background-color: #FF6A00;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.9rem;
+    box-shadow:
+        0 0 6px rgba(255, 122, 0, 0.8),
+        0 0 11px rgba(255, 122, 0, 0.5);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.vark-link:hover {
+    background-color: #d27841;
+    transform: scale(1.04);
+}
+
+.item-menu a.ativo {
+    background: #BF6301;
+    color: white;
+    box-shadow:
+        0 0 6px rgba(255, 122, 0, 0.5),
+        0 0 13px #683607;
+}
+
+html[data-tema="claro"] .vark-lista li,
+body.tema-claro .vark-lista li {
+    background-color: #ffffff !important;
+    border: 1px solid #9db0da !important;
+    color: #1e2f53 !important;
+}
+
+html[data-tema="claro"] .vark-lista li strong,
+body.tema-claro .vark-lista li strong {
+    color: #1e2f53 !important;
+}
+
+html[data-tema="claro"] .vark-bloco p,
+html[data-tema="claro"] .vark-link-box p,
+body.tema-claro .vark-bloco p,
+body.tema-claro .vark-link-box p {
+    color: #4d628f !important;
+}
+
+html[data-tema="claro"] .vark-link,
+body.tema-claro .vark-link {
+    background-color: #b45900 !important;
+    box-shadow:
+        0 0 6px rgba(180, 89, 0, 0.6),
+        0 0 11px rgba(180, 89, 0, 0.4) !important;
+}
+
+html[data-tema="claro"] .vark-link:hover,
+body.tema-claro .vark-link:hover {
+    background-color: #8a4200 !important;
+}
+
+@media (max-width: 900px) {
+    .vark-panel {
+        max-width: 100%;
+    }
+
+    .vark-link {
+        width: 100%;
+    }
+}

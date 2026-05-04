@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VARK - Vortex</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='caioo.css') }}">
+    <script src="{{ url_for('static', filename='tema.js') }}"></script>
+</head>
+<body>
+    <div class="card_cima">
+        <img class="imagem_vortexx" src="{{ url_for('static', filename='imagens/logo_transparente (1).svg') }}" alt="logo do vortex">
+        <h1 class="nome_logo">Vortex AI</h1>
+        <img class="imagem-perfil" src="{{ foto_perfil_url }}" alt="Foto do perfil" onclick="window.location.href='{{ url_for('perfil') }}'">
+    </div>
+
+    <div class="conteudo">
+        <div class="card_lado">
+            <nav class="menu-lateral">
+                <ul>
+                    <li class="item-menu">
+                        <a href="{{ url_for('assistente_academica') }}">
+                            <span class="icon"><i class="bi bi-robot"></i></span>
+                            <span class="txt-link">Assistente IA</span>
+                        </a>
+                    </li>
+
+                    <li class="item-menu">
+                        <a href="{{ url_for('modo_foco') }}">
+                            <span class="icon"><i class="bi bi-bullseye"></i></span>
+                            <span class="txt-link">Modo Foco</span>
+                        </a>
+                    </li>
+
+                    <li class="item-menu">
+                        <a href="{{ url_for('tarefas') }}">
+                            <span class="icon"><i class="bi bi-book-half"></i></span>
+                            <span class="txt-link">Tarefas</span>
+                        </a>
+                    </li>
+
+                    <li class="item-menu">
+                        <a href="{{ url_for('flashcards') }}" class="btn-flashcard">
+                            <span class="icon"><i class="bi bi-card-text"></i></span>
+                            <span class="txt-link">Flashcard</span>
+                        </a>
+                    </li>
+
+                    <li class="item-menu">
+                        <a href="{{ url_for('simulado') }}" class="btn-simulado">
+                            <span class="icon"><i class="bi bi-journal-text"></i></span>
+                            <span class="txt-link">Simulado</span>
+                        </a>
+                    </li>
+
+                    <li class="item-menu">
+                        <a href="{{ url_for('vark') }}" class="btn-VARK ativo">
+                            <span class="icon"><i class="bi bi-palette"></i></span>
+                            <span class="txt-link">VARK</span>
+                        </a>
+                    </li>
+
+                    <li class="item-menu">
+                        <a href="{{ url_for('calendario') }}" class="btn-calendario">
+                            <span class="icon"><i class="bi bi-calendar-event"></i></span>
+                            <span class="txt-link">Calendario</span>
+                        </a>
+                    </li>
+
+                    <li class="item-menu">
+                        <a href="{{ url_for('perfil') }}">
+                            <span class="icon"><i class="bi bi-person-circle"></i></span>
+                            <span class="txt-link">Perfil</span>
+                        </a>
+                    </li>
+
+                    <li class="item-menu">
+                        <a href="{{ url_for('ajustes') }}">
+                            <span class="icon"><i class="bi bi-gear-fill"></i></span>
+                            <span class="txt-link">Ajustes</span>
+                        </a>
+                    </li>
+
+                    <li class="item-menu">
+                        <a href="{{ url_for('logout') }}" class="btn-sair">
+                            <span class="icon"><i class="bi bi-box-arrow-left"></i></span>
+                            <span class="txt-link">Sair</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="area_principal">
+            <main class="main-content vark-content">
+                <section class="panel vark-panel">
+                    <h2>VARK</h2>
+                    <p class="subtitle">Descubra como voce aprende melhor.</p>
+
+                    <div class="vark-bloco">
+                        <p>O metodo VARK separa os estilos de aprendizagem em quatro formas principais. Ele ajuda voce a escolher tecnicas de estudo mais alinhadas com o seu jeito de absorver conteudo.</p>
+
+                        <ul class="vark-lista">
+                            <li><strong>Visual:</strong> aprende melhor com mapas mentais, cores, graficos e esquemas.</li>
+                            <li><strong>Auditivo:</strong> aprende melhor ouvindo explicacoes, podcasts, aulas e debates.</li>
+                            <li><strong>Leitura/escrita:</strong> aprende melhor com resumos, listas, textos e anotacoes.</li>
+                            <li><strong>Cinestesico:</strong> aprende melhor praticando, simulando e resolvendo exercicios.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="panel vark-panel vark-panel-link">
+                    <h2>Teste VARK</h2>
+                    <p class="subtitle">Responda ao questionario oficial.</p>
+
+                    <div class="vark-link-box">
+                        <p>Abra o teste, responda com calma e depois use o resultado para adaptar seus estudos no Vortex.</p>
+                        <a class="vark-link" href="https://vark-learn.com/questionario/" target="_blank" rel="noopener noreferrer">Abrir teste</a>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+    {% include "_notion_widget.html" %}
+</body>
+</html>
