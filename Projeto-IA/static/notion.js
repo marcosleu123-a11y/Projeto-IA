@@ -17,6 +17,89 @@
 
     let notesMap = {};
     let activeSlot = null;
+    let savedRange = null;
+
+    function selectionIsInsideEditor() {
+        const selection = window.getSelection();
+
+        if (!selection || selection.rangeCount === 0) {
+            return false;
+        }
+
+        const range = selection.getRangeAt(0);
+        return editor.contains(range.commonAncestorContainer);
+    }
+
+    function saveEditorSelection() {
+        const selection = window.getSelection();
+
+        if (!selection || selection.rangeCount === 0 || !selectionIsInsideEditor()) {
+            return;
+        }
+
+        savedRange = selection.getRangeAt(0).cloneRange();
+    }
+
+    function restoreEditorSelection() {
+        editor.focus();
+
+        if (!savedRange) {
+            return;
+        }
+
+        const selection = window.getSelection();
+
+        if (!selection) {
+            return;
+        }
+
+        selection.removeAllRanges();
+        selection.addRange(savedRange);
+    }
+
+    function placeCaretAtEditorEnd() {
+        const range = document.createRange();
+        const selection = window.getSelection();
+
+        range.selectNodeContents(editor);
+        range.collapse(false);
+
+        if (selection) {
+            selection.removeAllRanges();
+            selection.addRange(range);
+            savedRange = range.cloneRange();
+        }
+    }
+
+    function configureEditorParagraphs() {
+        document.execCommand("styleWithCSS", false, false);
+        document.execCommand("defaultParagraphSeparator", false, "p");
+    }
+
+    function applyFormat(command, value) {
+        restoreEditorSelection();
+        configureEditorParagraphs();
+
+        if (command === "formatBlock" && !editor.textContent.trim()) {
+            editor.innerHTML = `<${value}><br></${value}>`;
+            placeCaretAtEditorEnd();
+            saveEditorSelection();
+            return;
+        }
+
+        if (command === "formatBlock") {
+            const htmlValue = `<${value}>`;
+            const applied = document.execCommand(command, false, htmlValue);
+
+            if (!applied) {
+                document.execCommand(command, false, value);
+            }
+        } else {
+            document.execCommand(command, false, value);
+        }
+
+        saveEditorSelection();
+    }
 
     function setButtonPositions() {
         const isSmallScreen = window.matchMedia("(max-width: 900px)").matches;
@@ -46,12 +129,14 @@
     function openModal() {
         modal.classList.remove("notion-hidden");
         backdrop.classList.remove("notion-hidden");
+        configureEditorParagraphs();
     }
 
     function closeModal() {
         modal.classList.add("notion-hidden");
         backdrop.classList.add("notion-hidden");
         activeSlot = null;
+        savedRange = null;
         saveStatus.textContent = "";
     }
 
@@ -83,13 +168,20 @@
         });
     }
 
+    window.addEventListener("notionNotasAtualizadas", () => {
+        loadNotes().catch(() => {
+            saveStatus.textContent = "Nao foi possivel atualizar as notas.";
+        });
+    });
+
     function fillModalWithNote(slot) {
         const note = notesMap[slot];
         activeSlot = slot;
         noteTitleInput.value = note ? note.title : `Nota ${slot}`;
         editor.innerHTML = note ? note.content_html : "";
         openModal();
-        noteTitleInput.focus();
+        editor.focus();
+        placeCaretAtEditorEnd();
     }
 
     async function saveActiveNote() {
@@ -142,6 +234,13 @@
     closeModalBtn.addEventListener("click", closeModal);
     saveBtn.addEventListener("click", saveActiveNote);
     window.addEventListener("resize", setButtonPositions);
+    editor.addEventListener("keyup", saveEditorSelection);
+    editor.addEventListener("mouseup", saveEditorSelection);
+    editor.addEventListener("input", saveEditorSelection);
+    editor.addEventListener("focus", () => {
+        configureEditorParagraphs();
+        saveEditorSelection();
+    });
 
     document.addEventListener("keydown", (event) => {
         if (event.key === "Escape") {
@@ -159,11 +258,14 @@
     });
 
     toolbarButtons.forEach((button) => {
+        button.addEventListener("mousedown", (event) => {
+            event.preventDefault();
+        });
+
         button.addEventListener("click", () => {
             const command = button.dataset.command;
             const value = button.dataset.value || null;
-            document.execCommand(command, false, value);
-            editor.focus();
+            applyFormat(command, value);
         });
     });
 
@@ -175,6 +277,7 @@
     });
 
     setButtonPositions();
+    configureEditorParagraphs();
     loadNotes().catch(() => {
         saveStatus.textContent = "Nao foi possivel iniciar as notas.";
     });

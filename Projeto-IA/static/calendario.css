@@ -5,7 +5,7 @@
 }
 
 .calendario-panel {
-    max-width: 760px;
+    max-width: 1120px;
 }
 
 .calendario-header {
@@ -53,7 +53,15 @@
     transform: scale(1.04);
 }
 
-.calendar {
+.calendario-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+    gap: 18px;
+    align-items: start;
+}
+
+.calendar,
+.agenda-panel {
     border: 1.5px solid #6c3d8f;
     border-radius: 18px;
     background: linear-gradient(to bottom, #0E1942 0%, #18265d 48%, #020816 100%);
@@ -61,6 +69,12 @@
         0 0 6px rgba(255, 122, 0, 0.35),
         0 0 13px rgba(104, 54, 7, 0.55);
     padding: 22px;
+}
+
+.agenda-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
 }
 
 .titulo {
@@ -77,6 +91,18 @@
     font-size: 1.15rem;
     margin: 0;
     text-align: center;
+}
+
+.titulo-mes {
+    text-align: center;
+}
+
+.titulo-mes span {
+    color: #aab4d6;
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 600;
+    margin-top: 4px;
 }
 
 .dias,
@@ -106,16 +132,20 @@
 .datas div,
 .datas button {
     aspect-ratio: 1;
+    min-height: 64px;
     min-width: 0;
     border: 1px solid transparent;
     border-radius: 12px;
     background-color: rgba(14, 25, 66, 0.9);
     color: #d1d5db;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     font-family: "Inter", sans-serif;
     font-size: 0.95rem;
+    gap: 5px;
+    position: relative;
 }
 
 .datas button {
@@ -140,9 +170,187 @@
         0 0 11px rgba(255, 122, 0, 0.35);
 }
 
+.datas .selecionado {
+    border-color: #a855f7;
+    background-color: rgba(168, 85, 247, 0.2);
+    color: #ffffff;
+}
+
+.datas .tem-evento {
+    color: #ffffff;
+    font-weight: 800;
+}
+
+.numero-dia {
+    line-height: 1;
+}
+
+.marcadores-evento {
+    display: flex;
+    gap: 3px;
+    justify-content: center;
+    min-height: 7px;
+}
+
+.tipo-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    display: inline-block;
+    flex: 0 0 auto;
+}
+
+.tipo-dot.aula,
+.agenda-item.aula {
+    --tipo-cor: #38bdf8;
+}
+
+.tipo-dot.prova,
+.agenda-item.prova {
+    --tipo-cor: #fb7185;
+}
+
+.tipo-dot.avaliacao,
+.agenda-item.avaliacao {
+    --tipo-cor: #f59e0b;
+}
+
+.tipo-dot.simulado,
+.agenda-item.simulado {
+    --tipo-cor: #a78bfa;
+}
+
+.tipo-dot.feriado,
+.agenda-item.feriado {
+    --tipo-cor: #22c55e;
+}
+
+.tipo-dot.prazo,
+.agenda-item.prazo {
+    --tipo-cor: #f97316;
+}
+
+.tipo-dot.academico,
+.agenda-item.academico {
+    --tipo-cor: #e5e7eb;
+}
+
+.tipo-dot {
+    background: var(--tipo-cor, #e5e7eb);
+    box-shadow: 0 0 8px color-mix(in srgb, var(--tipo-cor, #e5e7eb) 70%, transparent);
+}
+
+.quantidade-eventos {
+    position: absolute;
+    right: 6px;
+    top: 6px;
+    min-width: 18px;
+    height: 18px;
+    border-radius: 999px;
+    background: rgba(255, 106, 0, 0.95);
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.68rem;
+    font-weight: 800;
+    padding: 0 5px;
+}
+
 .datas .vazio {
     background: transparent;
     border-color: transparent;
+}
+
+.legenda-calendario {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.legenda-calendario span {
+    align-items: center;
+    background: rgba(14, 25, 66, 0.75);
+    border: 1px solid rgba(154, 105, 209, 0.45);
+    border-radius: 999px;
+    color: #dbe4ff;
+    display: inline-flex;
+    font-size: 0.76rem;
+    font-weight: 700;
+    gap: 7px;
+    padding: 7px 10px;
+}
+
+.agenda-card {
+    background: rgba(2, 8, 22, 0.38);
+    border: 1px solid rgba(154, 105, 209, 0.38);
+    border-radius: 14px;
+    padding: 14px;
+}
+
+.agenda-card h3 {
+    color: #ffffff;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.95rem;
+    margin: 0 0 12px;
+}
+
+.agenda-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    max-height: 220px;
+    overflow-y: auto;
+    padding-right: 4px;
+    scrollbar-color: #BF6301 transparent;
+    scrollbar-width: thin;
+}
+
+.agenda-lista.compacta {
+    max-height: 170px;
+}
+
+.agenda-item {
+    border-left: 3px solid var(--tipo-cor, #e5e7eb);
+    background: rgba(14, 25, 66, 0.78);
+    border-radius: 10px;
+    color: #ffffff;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 10px;
+    padding: 10px 11px;
+}
+
+.agenda-item strong {
+    display: block;
+    font-size: 0.86rem;
+    line-height: 1.35;
+}
+
+.agenda-item span,
+.agenda-item p {
+    color: #aab4d6;
+    display: block;
+    font-size: 0.74rem;
+    line-height: 1.4;
+    margin: 3px 0 0;
+}
+
+.agenda-data {
+    align-self: start;
+    background: rgba(255, 106, 0, 0.16);
+    border: 1px solid rgba(255, 106, 0, 0.35);
+    border-radius: 999px;
+    color: #ffd7b5 !important;
+    font-weight: 800;
+    margin: 0 !important;
+    padding: 4px 7px;
+}
+
+.agenda-vazia {
+    color: #aab4d6;
+    font-size: 0.82rem;
+    line-height: 1.5;
 }
 
 .item-menu a.ativo {
@@ -154,13 +362,17 @@
 }
 
 html[data-tema="claro"] .calendar,
-body.tema-claro .calendar {
+html[data-tema="claro"] .agenda-panel,
+body.tema-claro .calendar,
+body.tema-claro .agenda-panel {
     background: linear-gradient(to bottom, #f7f9ff 0%, #eef3ff 50%, #e7edfb 100%) !important;
     border-color: #9db0da !important;
 }
 
 html[data-tema="claro"] .titulo h3,
-body.tema-claro .titulo h3 {
+html[data-tema="claro"] .agenda-card h3,
+body.tema-claro .titulo h3,
+body.tema-claro .agenda-card h3 {
     color: #1e2f53 !important;
 }
 
@@ -190,6 +402,28 @@ body.tema-claro .datas .hoje {
     color: #ffffff !important;
 }
 
+html[data-tema="claro"] .titulo-mes span,
+html[data-tema="claro"] .agenda-item span,
+html[data-tema="claro"] .agenda-item p,
+html[data-tema="claro"] .agenda-vazia,
+body.tema-claro .titulo-mes span,
+body.tema-claro .agenda-item span,
+body.tema-claro .agenda-item p,
+body.tema-claro .agenda-vazia {
+    color: #526079 !important;
+}
+
+html[data-tema="claro"] .agenda-card,
+html[data-tema="claro"] .agenda-item,
+html[data-tema="claro"] .legenda-calendario span,
+body.tema-claro .agenda-card,
+body.tema-claro .agenda-item,
+body.tema-claro .legenda-calendario span {
+    background: #ffffff !important;
+    border-color: #d7e0f3 !important;
+    color: #1e2f53 !important;
+}
+
 @media (max-width: 900px) {
     .calendario-panel {
         max-width: 100%;
@@ -207,7 +441,18 @@ body.tema-claro .datas .hoje {
         padding: 16px;
     }
 
+    .calendario-grid {
+        grid-template-columns: 1fr;
+    }
+
     .datas {
         gap: 6px;
+    }
+
+    .datas div,
+    .datas button {
+        min-height: 52px;
+        border-radius: 10px;
+        font-size: 0.86rem;
     }
 }

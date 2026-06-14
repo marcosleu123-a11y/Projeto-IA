@@ -29,20 +29,6 @@
                     </li>
 
                     <li class="item-menu">
-                        <a href="{{ url_for('modo_foco') }}">
-                            <span class="icon"><i class="bi bi-bullseye"></i></span>
-                            <span class="txt-link">Modo Foco</span>
-                        </a>
-                    </li>
-
-                    <li class="item-menu">
-                        <a href="{{ url_for('tarefas') }}">
-                            <span class="icon"><i class="bi bi-book-half"></i></span>
-                            <span class="txt-link">Tarefas</span>
-                        </a>
-                    </li>
-
-                    <li class="item-menu">
                         <a href="{{ url_for('flashcards') }}" class="btn-flashcard">
                             <span class="icon"><i class="bi bi-card-text"></i></span>
                             <span class="txt-link">Flashcard</span>
@@ -53,13 +39,6 @@
                         <a href="{{ url_for('simulado') }}" class="btn-simulado">
                             <span class="icon"><i class="bi bi-journal-text"></i></span>
                             <span class="txt-link">Simulado</span>
-                        </a>
-                    </li>
-
-                    <li class="item-menu">
-                        <a href="{{ url_for('vark') }}" class="btn-VARK">
-                            <span class="icon"><i class="bi bi-palette"></i></span>
-                            <span class="txt-link">VARK</span>
                         </a>
                     </li>
 
@@ -109,30 +88,54 @@
                         </button>
                     </div>
 
-                    <div class="calendar">
-                        <div class="titulo">
-                            <button class="calendar-nav" id="prevMonth" type="button" aria-label="Mes anterior">
-                                <i class="bi bi-chevron-left"></i>
-                            </button>
+                    <div class="calendario-grid">
+                        <div class="calendar">
+                            <div class="titulo">
+                                <button class="calendar-nav" id="prevMonth" type="button" aria-label="Mes anterior">
+                                    <i class="bi bi-chevron-left"></i>
+                                </button>
 
-                            <h3 id="monthYear"></h3>
+                                <div class="titulo-mes">
+                                    <h3 id="monthYear"></h3>
+                                    <span id="contadorEventos">Carregando eventos...</span>
+                                </div>
 
-                            <button class="calendar-nav" id="nextMonth" type="button" aria-label="Proximo mes">
-                                <i class="bi bi-chevron-right"></i>
-                            </button>
+                                <button class="calendar-nav" id="nextMonth" type="button" aria-label="Proximo mes">
+                                    <i class="bi bi-chevron-right"></i>
+                                </button>
+                            </div>
+
+                            <div class="dias">
+                                <div>Dom</div>
+                                <div>Seg</div>
+                                <div>Ter</div>
+                                <div>Qua</div>
+                                <div>Qui</div>
+                                <div>Sex</div>
+                                <div>Sab</div>
+                            </div>
+
+                            <div class="datas" id="datas"></div>
                         </div>
 
-                        <div class="dias">
-                            <div>Dom</div>
-                            <div>Seg</div>
-                            <div>Ter</div>
-                            <div>Qua</div>
-                            <div>Qui</div>
-                            <div>Sex</div>
-                            <div>Sab</div>
-                        </div>
+                        <aside class="agenda-panel" aria-label="Resumo do calendario">
+                            <div class="legenda-calendario">
+                                <span><i class="tipo-dot prova"></i>Provas</span>
+                                <span><i class="tipo-dot simulado"></i>Simulados</span>
+                                <span><i class="tipo-dot feriado"></i>Feriados</span>
+                                <span><i class="tipo-dot prazo"></i>Prazos</span>
+                            </div>
 
-                        <div class="datas" id="datas"></div>
+                            <section class="agenda-card">
+                                <h3>Dia selecionado</h3>
+                                <div id="agendaSelecionada" class="agenda-lista"></div>
+                            </section>
+
+                            <section class="agenda-card">
+                                <h3>Datas importantes do mes</h3>
+                                <div id="agendaMes" class="agenda-lista compacta"></div>
+                            </section>
+                        </aside>
                     </div>
                 </section>
             </main>

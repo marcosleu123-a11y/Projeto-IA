@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vortex</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='marcos.css') }}?v=3">
+    <link rel="stylesheet" href="{{ url_for('static', filename='marcos.css') }}?v=8">
 </head>
 <body>
     <div class="quadrado"></div>
@@ -28,20 +28,6 @@
                     </li>
 
                     <li class="item-menu">
-                        <a href="{{ url_for('modo_foco') }}">
-                            <span class="icon"><i class="bi bi-bullseye"></i></span>
-                            <span class="txt-link">Modo Foco</span>
-                        </a>
-                    </li>
-
-                    <li class="item-menu">
-                        <a href="{{ url_for('tarefas') }}">
-                            <span class="icon"><i class="bi bi-book-half"></i></span>
-                            <span class="txt-link">Tarefas</span>
-                        </a>
-                    </li>
-
-                    <li class="item-menu">
                         <a href="{{ url_for('flashcards') }}" class="btn-flashcard">
                             <span class="icon"><i class="bi bi-card-text"></i></span>
                             <span class="txt-link">Flashcard</span>
@@ -52,13 +38,6 @@
                         <a href="{{ url_for('simulado') }}" class="btn-simulado">
                             <span class="icon"><i class="bi bi-journal-text"></i></span>
                             <span class="txt-link">Simulado</span>
-                        </a>
-                    </li>
-
-                    <li class="item-menu">
-                        <a href="{{ url_for('vark') }}" class="btn-VARK">
-                            <span class="icon"><i class="bi bi-palette"></i></span>
-                            <span class="txt-link">VARK</span>
                         </a>
                     </li>
 
@@ -96,7 +75,45 @@
         <div class="area_principal">
             <div class="card_chat">
                 <iframe src="{{ url_for('static', filename='imagens/logo_assistente_animada (2).html') }}" class="animacao-fundo"></iframe>
+                <div class="chat-topo">
+                    <div class="chat-menu-area">
+                        <button class="botao-historicos" id="botaoHistoricos" type="button" aria-expanded="false">
+                            <i class="bi bi-chat-left-text"></i>
+                            Chats
+                        </button>
+                        <div class="painel-historicos" id="painelHistoricos" hidden>
+                            <div class="painel-historicos-topo">
+                                <span>Historicos</span>
+                                <button class="novo-chat" id="botaoNovoChat" type="button">
+                                    <i class="bi bi-plus-lg"></i>
+                                    Novo chat
+                                </button>
+                            </div>
+                            <div class="lista-historicos" id="listaHistoricos"></div>
+                        </div>
+                    </div>
+                    <button class="limpar-historico" id="botaoLimparHistorico" type="button">
+                        <i class="bi bi-trash"></i>
+                        Limpar chat
+                    </button>
+                </div>
                 <div class="mensagens" id="chatMensagens"></div>
+                <div class="modal-limpar-chat" id="modalLimparChat" hidden>
+                    <div class="modal-limpar-caixa" role="dialog" aria-modal="true" aria-labelledby="tituloModalLimpar">
+                        <div class="modal-limpar-icone">
+                            <i class="bi bi-trash"></i>
+                        </div>
+                        <h2 id="tituloModalLimpar">Limpar este chat?</h2>
+                        <p>As mensagens desta conversa serao apagadas, mas os outros chats continuam salvos.</p>
+                        <div class="modal-limpar-acoes">
+                            <button class="modal-cancelar" id="botaoCancelarLimpeza" type="button">Cancelar</button>
+                            <button class="modal-confirmar" id="botaoConfirmarLimpeza" type="button">
+                                <i class="bi bi-check2"></i>
+                                Limpar
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="card_pergunta">
@@ -112,7 +129,7 @@
         </div>
     </div>
 
-    <script src="{{ url_for('static', filename='marcos.js') }}"></script>
+    <script src="{{ url_for('static', filename='marcos.js') }}?v=9"></script>
     {% include "_notion_widget.html" %}
 </body>
 </html>

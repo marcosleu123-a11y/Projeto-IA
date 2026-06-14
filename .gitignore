@@ -1,0 +1,24 @@
+# Ambiente local
+.env
+*.env
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+
+# Dados locais gerados pela aplicacao
+*.db
+*.sqlite
+*.sqlite3
+*.log
+server.*.log
+
+# Uploads de usuarios
+Projeto-IA/static/uploads/perfil/*
+!Projeto-IA/static/uploads/perfil/.gitkeep
+
+# Arquivos locais/temporarios
+/base_de_conhecimento.json
+/how --no-patch --pretty=-P f260288
+Projeto-IA/Documentacao_*.docx

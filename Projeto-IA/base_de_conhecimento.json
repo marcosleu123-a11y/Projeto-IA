@@ -1,0 +1,427 @@
+{
+  "universidade": "UniEVANGÉLICA",
+
+  "curso": {
+    "nome": "Inteligência Artificial",
+    "turno": "Noturno",
+    "modalidade": "Presencial",
+    "sala_principal": "Bloco H - Sala H110",
+    "inicio_aulas": "02/02/2026",
+    "fim_aulas": "13/06/2026"
+  },
+
+  "avaliacoes": {
+    "a360": [
+      {
+        "numero": 1,
+        "inicio": "15/03/2026",
+        "fim": "17/03/2026"
+      },
+      {
+        "numero": 2,
+        "inicio": "26/04/2026",
+        "fim": "28/04/2026"
+      },
+      {
+        "numero": 3,
+        "inicio": "07/06/2026",
+        "fim": "09/06/2026"
+      }
+    ],
+
+    "afe": [
+      {
+        "numero": 1,
+        "inicio": "15/03/2026",
+        "fim": "17/03/2026"
+      },
+      {
+        "numero": 2,
+        "inicio": "26/04/2026",
+        "fim": "28/04/2026"
+      },
+      {
+        "numero": 3,
+        "inicio": "07/06/2026",
+        "fim": "09/06/2026"
+      }
+    ],
+
+    "vrau": [
+      {
+        "numero": 1,
+        "data": "17/03/2026"
+      },
+      {
+        "numero": 2,
+        "data": "28/04/2026"
+      },
+      {
+        "numero": 3,
+        "data": "09/06/2026"
+      }
+    ],
+
+    "projeto_final": {
+      "data": "10/06/2026",
+      "descricao": "Apresentação do Projeto"
+    }
+  },
+
+  "materias": [
+    {
+      "nome": "Cidadania, Ética e Espiritualidade",
+      "professor": "Holehon Santos Campos"
+    },
+    {
+      "nome": "Componentes Integrado",
+      "professor": "Henrique Valle De Lima"
+    },
+    {
+      "nome": "Fundamentos de Computação e Infraestrutura",
+      "professor": "Jeferson Silva Araújo"
+    },
+    {
+      "nome": "Fundamentos de Engenharia de Dados",
+      "professor": "Eduardo Dias Pereira"
+    },
+    {
+      "nome": "Fundamentos Matemáticos para Computação",
+      "professor": "Otoniel Vargas Junior"
+    },
+    {
+      "nome": "Introdução à Engenharia de Soluções",
+      "professores": [
+        "Henrique Valle De Lima",
+        "Holehon Santos Campos"
+      ]
+    },
+    {
+      "nome": "Leitura e Interpretação de Texto",
+      "professor": "Leonardo Rodrigues De Souza",
+      "modalidade": "Online"
+    }
+  ],
+
+  "horarios": [
+    {
+      "dia": "Segunda-feira",
+      "materia": "Fundamentos de Engenharia de Dados",
+      "professor": "Eduardo Dias Pereira",
+      "local": "Bloco H - Sala H110",
+      "inicio": "19:00",
+      "fim": "21:50"
+    },
+    {
+      "dia": "Terça-feira",
+      "materia": "Introdução à Engenharia de Soluções",
+      "professor": "Henrique Valle De Lima",
+      "local": "Bloco H - Sala H110",
+      "inicio": "19:00",
+      "fim": "21:50"
+    },
+    {
+      "dia": "Quarta-feira",
+      "materia": "Fundamentos Matemáticos para Computação",
+      "professor": "Otoniel Vargas Junior",
+      "local": "Bloco H - Sala H110",
+      "inicio": "19:00",
+      "fim": "21:50"
+    },
+    {
+      "dia": "Quinta-feira",
+      "materia": "Cidadania, Ética e Espiritualidade",
+      "professor": "Holehon Santos Campos",
+      "local": "Bloco H - Sala H110",
+      "inicio": "19:00",
+      "fim": "20:40"
+    },
+    {
+      "dia": "Quinta-feira",
+      "materia": "Introdução à Engenharia de Soluções",
+      "professor": "Holehon Santos Campos",
+      "local": "Bloco H - Sala H110",
+      "inicio": "21:00",
+      "fim": "21:50"
+    },
+    {
+      "dia": "Sexta-feira",
+      "materia": "Fundamentos de Computação e Infraestrutura",
+      "professor": "Jeferson Silva Araújo",
+      "local": "Bloco H - Sala H110",
+      "inicio": "19:00",
+      "fim": "21:50"
+    },
+    {
+      "dia": "Sábado",
+      "materia": "Leitura e Interpretação de Texto",
+      "professor": "Leonardo Rodrigues De Souza",
+      "local": "Online",
+      "inicio": "19:00",
+      "fim": "21:50"
+    }
+  ],
+
+  "laboratorios": [
+    {
+      "nome": "Laboratório 02",
+      "localizacao": "Bloco E - Piso 2 - Sala E208"
+    },
+    {
+      "nome": "Laboratório 03",
+      "localizacao": "Bloco J - Piso 2 - Sala J204"
+    },
+    {
+      "nome": "Laboratório 04",
+      "localizacao": "Bloco C - Piso 4 - Sala C403"
+    },
+    {
+      "nome": "Laboratório 05",
+      "localizacao": "Bloco E - Piso 2 - Sala E209"
+    },
+    {
+      "nome": "Laboratório 06",
+      "localizacao": "Bloco E - Piso 2 - Sala E212"
+    },
+    {
+      "nome": "Laboratório 07",
+      "localizacao": "Bloco I - Piso 2 - Sala I207"
+    },
+    {
+      "nome": "Laboratório 08",
+      "localizacao": "Bloco I - Piso 2 - Sala I206"
+    },
+    {
+      "nome": "Laboratório 09",
+      "localizacao": "Bloco B1 - Piso 2 - Sala B1301"
+    },
+    {
+      "nome": "Laboratório 10",
+      "localizacao": "Bloco B1 - Piso 2 - Sala B1302"
+    },
+    {
+      "nome": "Laboratório 11",
+      "localizacao": "Bloco B2 - Piso 4 - Sala B2410/411"
+    },
+    {
+      "nome": "Laboratório 12",
+      "localizacao": "Bloco A - Piso 1 - Sala A114"
+    },
+    {
+      "nome": "Laboratório CT",
+      "localizacao": "Centro Tecnológico"
+    },
+    {
+      "nome": "Laboratório DG",
+      "localizacao": "Bloco J - Piso 2 - Sala J205"
+    },
+    {
+      "nome": "Laboratório EngSoft",
+      "localizacao": "Bloco H - Piso 2 - Sala H201/202"
+    }
+  ],
+
+  "calendario_academico": {
+    "janeiro": [
+      {
+        "data": "01",
+        "evento": "Confraternização Universal",
+        "tipo": "Feriado"
+      },
+      {
+        "data": "12 a 28",
+        "evento": "Período para rematrícula on-line"
+      },
+      {
+        "data": "26 a 30",
+        "evento": "Seminário de Atualização de Práticas Docentes e Planejamento Acadêmico"
+      },
+      {
+        "data": "29",
+        "evento": "Colação de Grau Unificada"
+      }
+    ],
+
+    "fevereiro": [
+      {
+        "data": "02",
+        "evento": "Início das aulas (1º dia letivo)"
+      },
+      {
+        "data": "02 a 13",
+        "evento": "Integração Acadêmica e Acolhida dos Calouros"
+      },
+      {
+        "data": "16 e 17",
+        "evento": "Recesso de Carnaval"
+      },
+      {
+        "data": "27",
+        "evento": "Último prazo para entrega dos Planos de Ensino"
+      }
+    ],
+
+    "marco": [
+      {
+        "data": "03",
+        "evento": "Lançamento dos Editais Institucionais"
+      },
+      {
+        "data": "06",
+        "evento": "Último prazo para inclusão/exclusão de disciplina"
+      },
+      {
+        "data": "10",
+        "evento": "Último prazo para lançamento da frequência de fevereiro"
+      },
+      {
+        "data": "16 a 21",
+        "evento": "1ª Verificação de Aprendizagem (1ª VA)"
+      },
+      {
+        "data": "30",
+        "evento": "Último prazo para lançamento das notas da 1ª VA"
+      },
+      {
+        "data": "31",
+        "evento": "Aniversário da Associação Educativa Evangélica (AEE)"
+      }
+    ],
+
+    "abril": [
+      {
+        "data": "03",
+        "evento": "Sexta-feira da Paixão",
+        "tipo": "Feriado"
+      },
+      {
+        "data": "06",
+        "evento": "Abertura das inscrições dos projetos de IC e IT"
+      },
+      {
+        "data": "10",
+        "evento": "Último prazo para lançamento da frequência de março"
+      },
+      {
+        "data": "19",
+        "evento": "Dia dos Povos Indígenas"
+      },
+      {
+        "data": "21",
+        "evento": "Tiradentes",
+        "tipo": "Feriado"
+      },
+      {
+        "data": "24 a 30",
+        "evento": "2ª Verificação de Aprendizagem (2ª VA)"
+      },
+      {
+        "data": "27",
+        "evento": "Último prazo para inscrição dos projetos de IC e IT"
+      },
+      {
+        "data": "30",
+        "evento": "Último prazo para trancamento de matrícula"
+      }
+    ],
+
+    "maio": [
+      {
+        "data": "01",
+        "evento": "Dia do Trabalhador",
+        "tipo": "Feriado"
+      },
+      {
+        "data": "08",
+        "evento": "Último prazo para lançamento da frequência de abril"
+      },
+      {
+        "data": "08",
+        "evento": "Último prazo para lançamento das notas da 2ª VA"
+      },
+      {
+        "data": "23",
+        "evento": "UniFAMÍLIA"
+      },
+      {
+        "data": "24",
+        "evento": "Vestibular para Medicina (Campus Sede)"
+      },
+      {
+        "data": "31",
+        "evento": "Vestibular Geral"
+      }
+    ],
+
+    "junho": [
+      {
+        "data": "01 a 03",
+        "evento": "Semana do Meio Ambiente"
+      },
+      {
+        "data": "03",
+        "evento": "100 dias letivos"
+      },
+      {
+        "data": "04",
+        "evento": "Corpus Christi",
+        "tipo": "Feriado"
+      },
+      {
+        "data": "08 a 13",
+        "evento": "3ª Verificação de Aprendizagem (3ª VA)"
+      },
+      {
+        "data": "12",
+        "evento": "Último prazo para lançamento da frequência de maio"
+      },
+      {
+        "data": "19",
+        "evento": "Último prazo para lançamento das notas da 3ª VA e da frequência de junho"
+      }
+    ],
+
+    "julho": [
+      {
+        "data": "13 a 29",
+        "evento": "Rematrícula on-line"
+      },
+      {
+        "data": "26",
+        "evento": "Feriado Municipal"
+      },
+      {
+        "data": "27 a 30",
+        "evento": "Seminário de Atualização de Práticas Docentes e Planejamento Acadêmico"
+      },
+      {
+        "data": "31",
+        "evento": "Aniversário de Anápolis",
+        "tipo": "Feriado Municipal"
+      }
+    ]
+  },
+
+  "faq": [
+    {
+      "pergunta": "Onde acontecem as aulas?",
+      "resposta": "As aulas presenciais acontecem no Bloco H, Sala H110."
+    },
+    {
+      "pergunta": "Quando começa o semestre?",
+      "resposta": "O semestre começa em 02/02/2026."
+    },
+    {
+      "pergunta": "Quando termina o semestre?",
+      "resposta": "O último dia de aula é 13/06/2026."
+    },
+    {
+      "pergunta": "Quando é a apresentação do projeto?",
+      "resposta": "A apresentação do projeto acontece em 10/06/2026."
+    },
+    {
+      "pergunta": "Quem ministra a disciplina de Inteligência Artificial?",
+      "resposta": "Henrique Valle De Lima."
+    }
+  ]
+}
